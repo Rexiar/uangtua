@@ -27,10 +27,30 @@ namespace MainProgram
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 targetWindow = new Window1();
-
+                
             // Show the target window
             targetWindow.Show();
             this.Close();
+        }
+
+        private void usernameInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void emailInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void passwordInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void registerBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
