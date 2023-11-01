@@ -16,31 +16,27 @@ namespace MainProgram.Service
     internal class TransactionService
 >>>>>>> 4d22a3da71477dbbe083b8022c1cf6af81e2be75:MainProgram/Service/TransactionService.cs
     {
-        public static bool AddIncome(Income income)
-        {
-            DBConnection dbConnection = new DBConnection();
-            string query = "INSERT INTO Income (IncomeId, Title, CatagoryId, Amount, TypeIncome, Description, CreatedAt, UserId) VALUES (@incomeid, @title, @catagoryid, @amount, @type, @description, @createAt, @userid)";
-            using (NpgsqlConnection connection = dbConnection.GetConnection())
+        public static bool AddTransaction(Transaction transaction)
             {
-                connection.Open();
-                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@incomeid", income.IncomeId);
-                    command.Parameters.AddWithValue("@title", income.Title);
-                    command.Parameters.AddWithValue("@catagoryid", income.CatagoryId);
-                    command.Parameters.AddWithValue("@amount", income.Amount);
-                    command.Parameters.AddWithValue("@type", income.TypeIncome);
-                    command.Parameters.AddWithValue("@description", income.Description);
-                    command.Parameters.AddWithValue("@createAt", income.CreatedAt);
-                    command.Parameters.AddWithValue("@userid", income.UserId);
+            DBConnection dbConnection = new DBConnection();
+            string query = "INSERT INTO Transaction (CategoryID, Amount, Note, UserID. Date) VALUES (@categoryID, @amount, @note, @userid, @date)";
+                using (NpgsqlConnection connection = dbConnection.GetConnection())
+                    {
+                            connection.Open();
+                            using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@categoryID", transaction.CategoryID);
+                                command.Parameters.AddWithValue("@amount", transaction.Amount);
+                                command.Parameters.AddWithValue("@note", transaction.Note);
+                                command.Parameters.AddWithValue("@userid", transaction.UserID);
+                                command.Parameters.AddWithValue("date", transaction.Date);
+
 
                     int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0;
+                                return rowsAffected > 0;
+                            }
+          
                 }
-            }
-
-
-
         }
     }
 }
