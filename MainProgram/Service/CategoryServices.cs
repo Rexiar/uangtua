@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MainProgram.Model
+namespace MainProgram.Service
 {
-    internal class Income
+    internal class CategoryServices
     {
     }
 }

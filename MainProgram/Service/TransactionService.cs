@@ -10,7 +10,11 @@ using Npgsql;
 
 namespace MainProgram.Service
 {
+<<<<<<< HEAD:MainProgram/Service/IncomeService.cs
     public class IncomeService
+=======
+    internal class TransactionService
+>>>>>>> 4d22a3da71477dbbe083b8022c1cf6af81e2be75:MainProgram/Service/TransactionService.cs
     {
         public static bool AddIncome(Income income)
         {
