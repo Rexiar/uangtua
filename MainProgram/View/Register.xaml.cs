@@ -17,20 +17,11 @@ namespace MainProgram
     /// <summary>
     /// Interaction logic for Register.xaml
     /// </summary>
-    public partial class Register : Window
+    public partial class registerWindow : Window
     {
-        public Register()
+        public registerWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Window1 targetWindow = new Window1();
-                
-            // Show the target window
-            targetWindow.Show();
-            this.Close();
         }
 
         private void usernameInput_TextChanged(object sender, TextChangedEventArgs e)
@@ -50,7 +41,20 @@ namespace MainProgram
 
         private void registerBtn_Click(object sender, RoutedEventArgs e)
         {
+            dashboardWindow targetWindow = new dashboardWindow();
 
+            // Show the target window
+            targetWindow.Show();
+            this.Close();
+        }
+
+        private void loginRedirect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            loginWindow targetWindow = new loginWindow();
+
+            // Show the target window
+            targetWindow.Show();
+            this.Close();
         }
     }
 }

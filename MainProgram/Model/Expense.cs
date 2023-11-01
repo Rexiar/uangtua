@@ -39,7 +39,7 @@ namespace MainProgram.Model
         public string Description { get; set; }
         public DateTime CreatedAt { get; set; }
         public int UserId { get; set; }
-        public ExpenseCategory ExpenseCategory { get; set; }
+        //public ExpenseCategory ExpenseCategory { get; set; }
         public User User { get; set; }
     }
 }

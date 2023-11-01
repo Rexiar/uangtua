@@ -17,16 +17,16 @@ namespace MainProgram
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class loginWindow : Window
     {
-        public Window1()
+        public loginWindow()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow targetWindow = new MainWindow();
+            dashboardWindow targetWindow = new dashboardWindow();
 
             // Show the target window
             targetWindow.Show();
