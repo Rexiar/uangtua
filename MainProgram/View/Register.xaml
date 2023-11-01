@@ -156,13 +156,13 @@
     <Grid x:Name="registerForm">
         <Label x:Name="RegisterLabel" Content="SIGNUP" HorizontalAlignment="Left" Margin="182,46,0,0" VerticalAlignment="Top" Width="90" FontSize="20" FontWeight="Bold"/>
         <Label Content="Username" HorizontalAlignment="Left" Margin="86,82,0,0" VerticalAlignment="Top" FontSize="10               " Foreground="#FF565050"/>
-        <TextBox x:Name="usernameInput" Style="{DynamicResource RoundedTextStyle1}" HorizontalAlignment="Center" Margin="0,105,0,0" TextWrapping="Wrap" Text="Enter your username" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5" TextChanged="usernameInput_TextChanged"/>
+        <TextBox x:Name="usernameInput" Style="{DynamicResource RoundedTextStyle1}" HorizontalAlignment="Center" Margin="0,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5" TextChanged="usernameInput_TextChanged"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="86,138,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050"/>
-        <TextBox x:Name="emailInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Center" Margin="0,161,0,0" TextWrapping="Wrap" Text="Enter your email" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5" TextChanged="emailInput_TextChanged"/>
+        <TextBox x:Name="emailInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Center" Margin="0,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5" TextChanged="emailInput_TextChanged"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="86,194,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050"/>
-        <TextBox x:Name="passwordInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Center" Margin="0,217,0,0" TextWrapping="Wrap" Text="Enter your password" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5" TextChanged="passwordInput_TextChanged"/>
+        <TextBox x:Name="passwordInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Center" Margin="0,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5" TextChanged="passwordInput_TextChanged"/>
         <Label Content="Phone Number" HorizontalAlignment="Left" Margin="86,245,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050"/>
-        <TextBox x:Name="contactsInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Center" Margin="0,273,0,0" TextWrapping="Wrap" Text="Enter your phone number" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5" TextChanged="passwordInput_TextChanged"/>
+        <TextBox x:Name="contactsInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Center" Margin="0,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5" TextChanged="passwordInput_TextChanged"/>
 
 
         <Button x:Name="registerBtn" Style="{DynamicResource RoundedButtonStyle}" Content="Sign Up" HorizontalAlignment="Left" Margin="101,317,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326" Click="registerBtn_Click"/>

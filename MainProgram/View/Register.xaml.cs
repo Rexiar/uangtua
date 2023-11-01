@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using MainProgram.Service;
+using MainProgram.Model;
 
 namespace MainProgram
 {
@@ -43,18 +46,12 @@ namespace MainProgram
         {
             dashboardWindow targetWindow = new dashboardWindow();
 
-            // Show the target window
-            targetWindow.Show();
-            this.Close();
         }
 
         private void loginRedirect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             loginWindow targetWindow = new loginWindow();
 
-            // Show the target window
-            targetWindow.Show();
-            this.Close();
         }
     }
 }

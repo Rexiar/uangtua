@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MainProgram.Service
 {
-    internal class IncomeService
+    internal class TransactionService
     {
     }
 }

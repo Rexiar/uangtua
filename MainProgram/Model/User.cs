@@ -8,23 +8,33 @@ namespace MainProgram.Model
 {
     public class User
     {
+        public int UserID { get; set; }
+
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Contacts { get; set; }
+        public string Password { get; set; }
+        public List<Transaction> Transactions { get; set; }
         public User(
-            int userid,
             string username,
             string email,
             string contacts,
             string password)
         {
-            UserID = userid;
             Username = username;
             Email = email;
             Contacts = contacts;
             Password = password;
         }
-        public int UserID { get; set; }
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string Contacts { get; set; }
-        private string Password { get; set; }
+
+        public void SetPassword(string password)
+        {
+            Password = password;
+        }
+
+        private string GetPassword()
+        {
+            return Password;
+        }
     }
 }
