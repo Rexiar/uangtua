@@ -27,8 +27,17 @@ namespace MainProgram
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             dashboardWindow targetWindow = new dashboardWindow();
+            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+            targetWindow.Top = this.Top;
+            targetWindow.Show();
+            this.Close();
+        }
 
-            // Show the target window
+        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            registerWindow targetWindow = new registerWindow();
+            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+            targetWindow.Top = this.Top;
             targetWindow.Show();
             this.Close();
         }

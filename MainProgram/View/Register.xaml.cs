@@ -44,13 +44,20 @@ namespace MainProgram
 
         private void registerBtn_Click(object sender, RoutedEventArgs e)
         {
-            dashboardWindow targetWindow = new dashboardWindow();
-
+            loginWindow targetWindow = new loginWindow();
+            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+            targetWindow.Top = this.Top;
+            targetWindow.Show();
+            this.Close();
         }
 
         private void loginRedirect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             loginWindow targetWindow = new loginWindow();
+            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+            targetWindow.Top = this.Top;
+            targetWindow.Show();
+            this.Close();
 
         }
     }
