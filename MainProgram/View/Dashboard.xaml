@@ -19,7 +19,7 @@
         <Label Content="Expense" HorizontalAlignment="Center" Margin="54,223,0,0" VerticalAlignment="Center" Foreground="#FFF1ECEC"/>
         <Label Content="Saving Plans" HorizontalAlignment="Left" Margin="54,265,0,0" VerticalAlignment="Top" Foreground="#FFF1ECEC"/>
         <Label Content="Setting" HorizontalAlignment="Left" Margin="54,360,0,0" VerticalAlignment="Top" Foreground="#FFF1ECEC"/>
-        <Label Content="Log Out" HorizontalAlignment="Left" Margin="56,402,0,0" VerticalAlignment="Top" Foreground="#FFF1ECEC"/>
+        <Label Content="Log Out" HorizontalAlignment="Left" Margin="56,402,0,0" VerticalAlignment="Top" Foreground="#FFF1ECEC" MouseLeftButtonUp="Label_MouseLeftButtonUp"/>
         <Label Content="Dashboard" HorizontalAlignment="Left" Margin="222,51,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" FontWeight="Bold"/>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="204,85,204,95" Background="#FFD0EAD0">
             <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="34,22,214,241" Background="#FF6CE86C" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144" Height="65">

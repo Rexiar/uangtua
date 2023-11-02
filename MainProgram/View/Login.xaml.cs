@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -36,6 +37,10 @@ namespace MainProgram
                 targetWindow.Top = this.Top;
                 targetWindow.Show();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Account Invalid!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
