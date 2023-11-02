@@ -44,6 +44,8 @@ namespace MainProgram
 
         private void registerBtn_Click(object sender, RoutedEventArgs e)
         {
+            User userInfo = new User(usernameInput.Text, emailInput.Text, contactsInput.Text, passwordInput.Text);
+            AuthService.RegisterUser(userInfo);
             loginWindow targetWindow = new loginWindow();
             targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
             targetWindow.Top = this.Top;

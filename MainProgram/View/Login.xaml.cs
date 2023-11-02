@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MainProgram.Config;
+using MainProgram.Service;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,11 +29,14 @@ namespace MainProgram
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            dashboardWindow targetWindow = new dashboardWindow();
-            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
-            targetWindow.Top = this.Top;
-            targetWindow.Show();
-            this.Close();
+            if (AuthService.LoginUser(usernameLabel.Text, passwordLabel.Text)) 
+            {
+                dashboardWindow targetWindow = new dashboardWindow();
+                targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+                targetWindow.Top = this.Top;
+                targetWindow.Show();
+                this.Close();
+            }
         }
 
         private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

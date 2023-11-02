@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MainProgram.Config;
 using Npgsql;
-using MainProgram.Model;
 
 namespace MainProgram.Service
 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,10 @@ namespace MainProgram.Config
     {
         public NpgsqlConnection GetConnection()
         {
-            string connectionString = "Host=localhost;Port=5432;Database=UANGTUADB;Username=postgres;Password=admin";
+            //string connectionString = "Host=localhost;Port=5432;Database=UANGTUADB;Username=postgres;Password=admin";
+            string connectionString = "Host=localhost;Port=5432;Database=uangtuadb;Username=postgres;Password=postgres";
             NpgsqlConnection connection = new NpgsqlConnection(connectionString);
+            //Debug.WriteLine("Connection opened successfully.");
             return connection;
         }
     }
