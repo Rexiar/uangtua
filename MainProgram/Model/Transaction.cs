@@ -9,14 +9,14 @@ namespace MainProgram.Model
 {
     public class Transaction
     {
-        public int TransactionID { get; set; }
-        public int CategoryID { get; set; }
-        public Category? Category { get; set; }
-        public int Amount { get; set; }
-        public string Note { get; set; }
-        public DateTime Date { get; set; } = DateTime.Now;
-        public int UserID { get; set; }
-        public User? User { get; set; }
+        public int TransactionID;
+        public int CategoryID;
+        public Category? Category;
+        public int Amount;
+        public string Note;
+        public DateTime Date = DateTime.Now;
+        public int UserID;
+        public User? User;
 
         public Transaction(int transactionID, int categoryID, int amount, string note, int userID)
         {
