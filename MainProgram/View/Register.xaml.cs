@@ -65,6 +65,9 @@ namespace MainProgram
                 if (isRegistered)
                 {
                     MessageBox.Show("Registration is successful");
+                    loginWindow targetWindow = new loginWindow();
+                    targetWindow.Show();
+                    this.Close();
                 }
                 else
                 {
@@ -72,18 +75,15 @@ namespace MainProgram
                 }
             }
 
-        private void loginRedirect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            loginWindow targetWindow = new loginWindow();
-            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
-            targetWindow.Top = this.Top;
-            targetWindow.Show();
-            this.Close();
+            private void loginRedirect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+            {
+                loginWindow targetWindow = new loginWindow();
 
                 // Show the target window
                 targetWindow.Show();
                 this.Close();
             }
-        }
+
     }
+}
 

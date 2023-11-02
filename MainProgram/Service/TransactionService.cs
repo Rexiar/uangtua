@@ -9,9 +9,9 @@ using Npgsql;
 
 namespace MainProgram.Service
 {
-    internal class TransactionService
+    public class TransactionService
     {
-        public static bool AddTransaction(MainProgram.Model.Transaction transaction)
+        public static bool AddTransaction(Transaction transaction)
         {
             DBConnection dbConnection = new DBConnection();
             string query = "INSERT INTO Transaction (CategoryID, Amount, Note, UserID. Date) VALUES (@categoryID, @amount, @note, @userid, @date)";
