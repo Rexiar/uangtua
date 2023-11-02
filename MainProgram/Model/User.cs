@@ -14,7 +14,7 @@ namespace MainProgram.Model
         public string Email { get; set; }
         public string Contacts { get; set; }
         private string Password { get; set; }
-        public List<Transaction> Transactions { get; set; }
+        public List<Transaction>? Transactions { get; set; }
         public User(
             string username,
             string email,
