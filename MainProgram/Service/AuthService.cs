@@ -23,7 +23,7 @@ namespace MainProgram.Service
                     command.Parameters.AddWithValue("@username", user.Username);
                     command.Parameters.AddWithValue("@email", user.Email);
                     command.Parameters.AddWithValue("@contacts", user.Contacts);
-                    command.Parameters.AddWithValue("@password", user.Password);
+                    command.Parameters.AddWithValue("@password", user.GetPassword());
 
                     int rowsAffected = command.ExecuteNonQuery();
                     return rowsAffected > 0;
