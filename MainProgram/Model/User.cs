@@ -13,7 +13,7 @@ namespace MainProgram.Model
         public string Username { get; set; }
         public string Email { get; set; }
         public string Contacts { get; set; }
-        private string Password { get; set; }
+        public string Password { get; set; }
         public List<Transaction> Transactions { get; set; }
         public User(
             string username,
