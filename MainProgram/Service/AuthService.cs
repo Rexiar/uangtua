@@ -30,7 +30,6 @@ namespace MainProgram.Service
                 }
             }
         }
-
         public static bool LoginUser(string username, string password) 
         { 
             DBConnection dbConnection = new DBConnection();
