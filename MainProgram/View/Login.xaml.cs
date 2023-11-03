@@ -18,9 +18,6 @@ using System.Windows.Shapes;
 
 namespace MainProgram
 {
-    /// <summary>
-    /// Interaction logic for Window1.xaml
-    /// </summary>
     public partial class loginWindow : Window
     {
         public loginWindow()

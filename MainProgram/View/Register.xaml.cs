@@ -17,9 +17,6 @@ using MainProgram.Model;
 
 namespace MainProgram
 {
-    /// <summary>
-    /// Interaction logic for Register.xaml
-    /// </summary>
     public partial class registerWindow : Window
     {
         public registerWindow()

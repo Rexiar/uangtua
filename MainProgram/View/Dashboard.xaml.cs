@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace MainProgram
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class dashboardWindow : Window
     {
         public dashboardWindow()
@@ -34,6 +31,6 @@ namespace MainProgram
             targetWindow.Top = this.Top;
             targetWindow.Show();
             this.Close();
-        }
+        }a
     }
 }
