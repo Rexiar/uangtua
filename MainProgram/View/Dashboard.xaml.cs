@@ -31,6 +31,6 @@ namespace MainProgram
             targetWindow.Top = this.Top;
             targetWindow.Show();
             this.Close();
-        }a
+        }
     }
 }
