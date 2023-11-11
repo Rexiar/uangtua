@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MainProgram.View
+namespace MainProgram.View.Pages
 {
     /// <summary>
     /// Interaction logic for ProfilePage.xaml

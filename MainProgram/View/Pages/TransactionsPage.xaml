@@ -1,0 +1,38 @@
+﻿<Page x:Class="MainProgram.View.Pages.TransactionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MainProgram.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="TransactionsPage">
+
+    <Grid>
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Background="White"/>
+
+        <Label Content="Transactions" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="26,62,429,30" Background="#FFD0EAD0">
+        </Border>
+        <Button x:Name="addTransactionBtn" Content="Add Transaction" HorizontalAlignment="Left" Margin="60,312,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="877,269,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="usernameInput" HorizontalAlignment="Left" Margin="60,90,0,0" TextWrapping="Wrap" Text="Enter the transaction name" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="60,122,0,0" VerticalAlignment="Top" FontSize="10
+       " Foreground="#FF565050"/>
+        <TextBox x:Name="amountInput" HorizontalAlignment="Left" Margin="60,144,0,0" TextWrapping="Wrap" Text="Enter the transaction amount" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="63,62,0,0" VerticalAlignment="Top" FontSize="10
+      " Foreground="#FF565050"/>
+        <Label Content="Type" HorizontalAlignment="Left" Margin="63,177,0,0" VerticalAlignment="Top" FontSize="10
+       " Foreground="#FF565050"/>
+        <ComboBox Height="30" Margin="60,203,488,167">
+            <ComboBoxItem Content="Income"/>
+            <ComboBoxItem Content="Expense"/>
+        </ComboBox>
+        <Label Content="Category" HorizontalAlignment="Left" Margin="60,233,0,0" VerticalAlignment="Top" FontSize="10
+" Foreground="#FF565050"/>
+        <ComboBox Height="30" Margin="60,261,488,109">
+            <ComboBoxItem Content="IncomeCategory 1"/>
+            <ComboBoxItem Content="IncomeCategory 2"/>
+        </ComboBox>
+    </Grid>
+</Page>

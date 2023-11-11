@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MainProgram.View
+namespace MainProgram.View.Pages
 {
     /// <summary>
-    /// Interaction logic for TransactionsPage.xaml
+    /// Interaction logic for CategoriesPage.xaml
     /// </summary>
-    public partial class TransactionsPage : Page
+    public partial class CategoriesPage : Page
     {
-        public TransactionsPage()
+        public CategoriesPage()
         {
             InitializeComponent();
         }
