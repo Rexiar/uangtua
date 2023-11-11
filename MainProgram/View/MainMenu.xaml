@@ -1,0 +1,27 @@
+﻿<Window x:Class="MainProgram.View.mainMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainProgram.View"
+        mc:Ignorable="d"
+        Title="mainMenuWindow" Height="450" Width="1000">
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="498" Stroke="Black" VerticalAlignment="Top" Width="200" Fill="#FF2B2A2A">
+        </Rectangle>
+        <Label Content="Uang" HorizontalAlignment="Left" Margin="37,34,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="20" FontFamily="Montserrat"/>
+        <Label Content="tua" HorizontalAlignment="Left" Margin="92,34,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Montserrat" Foreground="White"/>
+        <Label Content="MANAGE" HorizontalAlignment="Left" Margin="21,106,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Montserrat"/>
+        <Label Content="PREFERENCES" HorizontalAlignment="Left" Margin="21,330,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Montserrat"/>
+        <Label Content="Setting" HorizontalAlignment="Left" Margin="54,360,0,0" VerticalAlignment="Top" Foreground="#FFF1ECEC"/>
+        <Button x:Name="logoutBtn" Content="Log Out" BorderThickness="0" FontFamily="Montserrat" HorizontalAlignment="Left" Background="Transparent" Foreground="White" Margin="52,373,0,-10"/>
+
+        <StackPanel Margin="51,150,621,115">
+            <Button x:Name="dashboardBtn" Content="Dashboard" Click="dashboardBtn_Click" BorderThickness="0" FontFamily="Montserrat" HorizontalAlignment="Left" Background="Transparent" Foreground="White" Margin="0,0,0,25"/>
+            <Button x:Name="transactionsBtn" Content="Transactions" BorderThickness="0" FontFamily="Montserrat" HorizontalAlignment="Left" Background="Transparent" Foreground="White" Margin="0,0,0,25"/>
+            <Button x:Name="categoriesBtn" Content="Categories" BorderThickness="0" FontFamily="Montserrat" HorizontalAlignment="Left" Background="Transparent" Foreground="White" Margin="0,0,0,25" Click="categoriesBtn_Click"/>
+            <Button x:Name="savingplansBtn" Content="Saving Plans" BorderThickness="0" FontFamily="Montserrat" HorizontalAlignment="Left" Background="Transparent" Foreground="White" Margin="0,0,0,10"/>
+        </StackPanel>
+        <Frame Content="" Margin="200,0,5,0" x:Name="Main"/>
+    </Grid>
+</Window>
