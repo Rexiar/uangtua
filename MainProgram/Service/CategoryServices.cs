@@ -9,25 +9,26 @@ using Npgsql;
 
 namespace MainProgram.Service
 {
-    internal class CategoryServices
+    public class CategoryServices
     {
-        public CategoryServices(Category category)
+        public static bool AddCategory(Category category)
         {
             DBConnection dbConnection = new DBConnection();
-            string query = "INSERT INTO Category (Title, Type) VALUES (@categoryID, @title, @type)";
-
+            string query = "INSERT INTO Categories (title, type) VALUES (@title, @type)";
             using (NpgsqlConnection connection = dbConnection.GetConnection())
             {
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@title", category.Title);
-                    command.Parameters.AddWithValue("@type", category.Type);
+                    command.Parameters.AddWithValue("@title",category.Title);
+                    command.Parameters.AddWithValue("@type", category.Type.ToString());
+
                     int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
                 }
             }
         }
     }
-    }
+}
 
 

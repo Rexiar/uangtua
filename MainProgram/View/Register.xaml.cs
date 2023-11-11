@@ -1,5 +1,3 @@
-﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +15,9 @@ using MainProgram.Model;
 
 namespace MainProgram
 {
+    /// <summary>
+    /// Interaction logic for Register.xaml
+    /// </summary>
     public partial class registerWindow : Window
     {
         public registerWindow()
@@ -41,23 +42,41 @@ namespace MainProgram
 
         private void registerBtn_Click(object sender, RoutedEventArgs e)
         {
-            User userInfo = new User(usernameInput.Text, emailInput.Text, contactsInput.Text, passwordInput.Text);
-            AuthService.RegisterUser(userInfo);
-            loginWindow targetWindow = new loginWindow();
-            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
-            targetWindow.Top = this.Top;
-            targetWindow.Show();
-            this.Close();
+            string username = usernameInput.Text;
+            string email = emailInput.Text;
+            string contacts = contactsInput.Text;
+            string password = passwordInput.Text;
+
+            Debug.WriteLine("Test");
+            User newUser = new User(username, email, contacts, password);
+            bool isRegistered = AuthService.RegisterUser(newUser);
+            Debug.WriteLine($"Registration result: {isRegistered}");
+
+            if (isRegistered)
+            {
+                MessageBox.Show("Registration is successful");
+                loginWindow targetWindow = new loginWindow();
+                targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+                targetWindow.Top = this.Top;
+                targetWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Registration failed.");
+            }
         }
+
 
         private void loginRedirect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             loginWindow targetWindow = new loginWindow();
-            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
-            targetWindow.Top = this.Top;
+
+            // Show the target window
             targetWindow.Show();
             this.Close();
-
         }
+
     }
 }
+

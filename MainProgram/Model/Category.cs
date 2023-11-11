@@ -13,7 +13,6 @@ namespace MainProgram.Model
         public TransactionType Type = TransactionType.Expense;
 
         public Category(
-            int categoryID, 
             string title, 
             TransactionType type)
         {

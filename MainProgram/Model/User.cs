@@ -63,7 +63,7 @@ namespace MainProgram.Model
             Password = password;
         }
 
-        public override string GetPassword()
+        private string GetPassword()
         {
             return Password;
         }

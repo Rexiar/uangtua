@@ -1,5 +1,4 @@
-﻿using MainProgram.Config;
-using MainProgram.Service;
+﻿using MainProgram.Service;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -25,28 +24,30 @@ namespace MainProgram
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (AuthService.LoginUser(usernameLabel.Text, passwordLabel.Text)) 
+            string username = usernameInput.Text;
+            string password = passwordInput.Text;
+
+            bool isAuthenticated = AuthService.LoginUser(username, password);
+            if (isAuthenticated)
             {
-                dashboardWindow targetWindow = new dashboardWindow();
-                targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
-                targetWindow.Top = this.Top;
-                targetWindow.Show();
+                MessageBox.Show("You are authenticated");
+                dashboardWindow dashboardWindow = new dashboardWindow();
+                dashboardWindow.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Account Invalid!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Authentication failed");
             }
         }
 
-        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void redirectToRegisterBtn_Click(object sender, RoutedEventArgs e)
         {
-            registerWindow targetWindow = new registerWindow();
-            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
-            targetWindow.Top = this.Top;
-            targetWindow.Show();
+            registerWindow registerWindow = new registerWindow();
+            registerWindow.Show();
             this.Close();
         }
     }

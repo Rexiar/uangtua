@@ -18,9 +18,8 @@ namespace MainProgram.Model
         public int UserID;
         public User? User;
 
-        public Transaction(int transactionID, int categoryID, int amount, string note, int userID)
+        public Transaction(int categoryID, int amount, string note, int userID)
         {
-            TransactionID = transactionID;
             CategoryID = categoryID;
             Amount = amount;
             Note = note;
