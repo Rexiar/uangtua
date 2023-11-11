@@ -1,4 +1,5 @@
 ﻿using MainProgram.Service;
+using MainProgram.View;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -34,8 +35,8 @@ namespace MainProgram
             if (isAuthenticated)
             {
                 MessageBox.Show("You are authenticated");
-                dashboardWindow dashboardWindow = new dashboardWindow();
-                dashboardWindow.Show();
+                mainMenuWindow mainMenuWindow = new mainMenuWindow();
+                mainMenuWindow.Show();
                 this.Close();
             }
             else
