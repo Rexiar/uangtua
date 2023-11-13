@@ -25,6 +25,7 @@ namespace MainProgram.View.Pages
         public CategoriesPage()
         {
             InitializeComponent();
+            loadCategories();
         }
 
         private void addCategoryBtn_Click(object sender, RoutedEventArgs e)
@@ -48,6 +49,28 @@ namespace MainProgram.View.Pages
                     MessageBox.Show("Error while adding new category");
                 }
             }
+        }
+
+        private void categoriesByExpenseDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void loadCategories()
+        {
+            List<Category> expenseCategories = CategoryServices.GetCategories("Expense");
+            List<Category> incomeCategories = CategoryServices.GetCategories("Income");
+
+            if (expenseCategories.Count > 0) 
+            {
+                MessageBox.Show("Yes");
+            }
+            else
+            {
+                MessageBox.Show("No");
+            }
+            categoriesByExpenseDataGrid.ItemsSource = null;
+            categoriesByExpenseDataGrid.ItemsSource = expenseCategories;
         }
     }
 }

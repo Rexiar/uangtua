@@ -475,3 +475,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/MainProgram/Service/CategoryServices.cs
+/MainProgram/View/Pages/CategoriesPage.xaml.cs
+/MainProgram/View/Pages/CategoriesPage.xaml
+/MainProgram/Service/CategoryServices.cs
+/MainProgram/View/Pages/CategoriesPage.xaml
