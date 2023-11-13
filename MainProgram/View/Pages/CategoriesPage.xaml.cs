@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MainProgram.Service;
+using MainProgram.Model;
 
 namespace MainProgram.View.Pages
 {
@@ -23,6 +25,29 @@ namespace MainProgram.View.Pages
         public CategoriesPage()
         {
             InitializeComponent();
+        }
+
+        private void addCategoryBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string categoryName = nameInput.Text;
+
+            if (typeInput.SelectedItem is ComboBoxItem selectedTypeItem)
+            {
+                string categoryType = selectedTypeItem.Content.ToString();
+                Enum.TryParse<Category.TransactionType>(categoryType, out Category.TransactionType transactionType);
+                Category newCategory = new Category(categoryName, transactionType);
+
+                bool isCreated = CategoryServices.AddCategory(newCategory);
+
+                if (isCreated)
+                {
+                    MessageBox.Show("New Category has been created");
+                }
+                else
+                {
+                    MessageBox.Show("Error while adding new category");
+                }
+            }
         }
     }
 }
