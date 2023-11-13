@@ -14,14 +14,14 @@
         <Label Content="Categories" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="24,84,441,28" Background="#FFD0EAD0">
         </Border>
-        <Button x:Name="addCategoryBtn" Content="Add Category" HorizontalAlignment="Left" Margin="60,312,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326"/>
+        <Button x:Name="addCategoryBtn" Content="Add Category" HorizontalAlignment="Left" Margin="60,312,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326" Click="addCategoryBtn_Click"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="877,269,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="usernameInput" HorizontalAlignment="Left" Margin="60,128,0,0" TextWrapping="Wrap" Text="Enter the category name" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
+        <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="60,128,0,0" TextWrapping="Wrap" Text="Enter the category name" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="60,105,0,0" VerticalAlignment="Top" FontSize="10
                " Foreground="#FF565050"/>
         <Label Content="Type" HorizontalAlignment="Left" Margin="60,172,0,0" VerticalAlignment="Top" FontSize="10
                " Foreground="#FF565050"/>
-        <ComboBox Height="30" Margin="60,198,488,172">
+        <ComboBox x:Name="typeInput" Height="30" Margin="60,198,488,172">
             <ComboBoxItem Content="Income"/>
             <ComboBoxItem Content="Expense"/>
         </ComboBox>
