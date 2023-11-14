@@ -34,21 +34,24 @@ namespace MainProgram
             bool isAuthenticated = AuthService.LoginUser(username, password);
             if (isAuthenticated)
             {
-                MessageBox.Show("You are authenticated");
-                mainMenuWindow mainMenuWindow = new mainMenuWindow();
-                mainMenuWindow.Show();
+                mainMenuWindow targetWindow = new mainMenuWindow();
+                targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+                targetWindow.Top = this.Top;
+                targetWindow.Show();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Authentication failed");
+                MessageBox.Show("Authentication Failed!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        private void redirectToRegisterBtn_Click(object sender, RoutedEventArgs e)
+        private void signUpLabel_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            registerWindow registerWindow = new registerWindow();
-            registerWindow.Show();
+
+            registerWindow targetWindow = new registerWindow();
+            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+            targetWindow.Top = this.Top;
+            targetWindow.Show();
             this.Close();
         }
     }

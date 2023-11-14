@@ -166,6 +166,6 @@
         <Label Content="Password" HorizontalAlignment="Left" Margin="24,161,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050" Grid.Column="2"/>
         <Button x:Name="loginBtn" Style="{DynamicResource RoundedButtonStyle}" Content="Login" HorizontalAlignment="Left" Margin="28,244,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326" Click="loginBtn_Click" Grid.Column="2"/>
         <Label Content="Do not have an account?" HorizontalAlignment="Left" Margin="60,275,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF7F7575" Grid.Column="2"/>
-        <Label Content="Sign Up" HorizontalAlignment="Left" Margin="185,275,0,0" VerticalAlignment="Top" FontSize="10" Foreground="Green" Grid.Column="2"/>
+        <Label x:Name="signUpLabel" Content="Sign Up" HorizontalAlignment="Left" Margin="185,275,0,0" VerticalAlignment="Top" FontSize="10" Foreground="Green" Grid.Column="2" MouseLeftButtonDown="signUpLabel_MouseLeftButtonDown"/>
     </Grid>
 </Window>

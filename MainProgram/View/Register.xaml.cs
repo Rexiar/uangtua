@@ -47,14 +47,13 @@ namespace MainProgram
             string contacts = contactsInput.Text;
             string password = passwordInput.Text;
 
-            Debug.WriteLine("Test");
             User newUser = new User(username, email, contacts, password);
             bool isRegistered = AuthService.RegisterUser(newUser);
             Debug.WriteLine($"Registration result: {isRegistered}");
 
             if (isRegistered)
             {
-                MessageBox.Show("Registration is successful");
+                MessageBox.Show("Registration is successful", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 loginWindow targetWindow = new loginWindow();
                 targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
                 targetWindow.Top = this.Top;
@@ -71,8 +70,8 @@ namespace MainProgram
         private void loginRedirect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             loginWindow targetWindow = new loginWindow();
-
-            // Show the target window
+            targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+            targetWindow.Top = this.Top;
             targetWindow.Show();
             this.Close();
         }
