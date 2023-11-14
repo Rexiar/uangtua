@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MainProgram.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="TransactionsPage">
 
     <Grid>
@@ -14,25 +14,47 @@
         <Label Content="Transactions" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="26,47,429,30" Background="#FFD0EAD0">
         </Border>
-        <Button x:Name="addTransactionBtn" Content="Add Transaction" HorizontalAlignment="Left" Margin="60,328,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326" Click="addTransactionBtn_Click"/>
+        <Button x:Name="addTransactionBtn" Content="Add Transaction" HorizontalAlignment="Left" Margin="63,355,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326" Click="addTransactionBtn_Click"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="877,269,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="transactionNameInput" HorizontalAlignment="Left" Margin="60,90,0,0" TextWrapping="Wrap" Text="Enter the transaction name" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
-        <Label Content="Amount" HorizontalAlignment="Left" Margin="60,122,0,0" VerticalAlignment="Top" FontSize="10
+        <TextBox x:Name="transactionNameInput" HorizontalAlignment="Left" Margin="60,75,0,0" TextWrapping="Wrap" Text="Enter the transaction name" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="60,108,0,0" VerticalAlignment="Top" FontSize="10
        " Foreground="#FF565050"/>
-        <TextBox x:Name="amountInput" HorizontalAlignment="Left" Margin="60,136,0,0" TextWrapping="Wrap" Text="Enter the transaction amount" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
-        <TextBox x:Name="noteInput" HorizontalAlignment="Left" Margin="60,169,0,0" TextWrapping="Wrap" Text="Enter the transaction note" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
+        <TextBox x:Name="amountInput" HorizontalAlignment="Left" Margin="60,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
+        <TextBox x:Name="noteInput" HorizontalAlignment="Left" Margin="63,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
 
         <Label Content="Name" HorizontalAlignment="Left" Margin="63,52,0,0" VerticalAlignment="Top" FontSize="10
       " Foreground="#FF565050"/>
-        <Label Content="Type" HorizontalAlignment="Left" Margin="63,193,0,0" VerticalAlignment="Top" FontSize="10
+        <Label Content="Type" HorizontalAlignment="Left" Margin="63,218,0,0" VerticalAlignment="Top" FontSize="10
        " Foreground="#FF565050"/>
         <ComboBox x:Name="transactionTypeInput" Height="30" Margin="60,221,488,149" SelectionChanged="transactionTypeInput_SelectionChanged">
             <ComboBoxItem Content="Income"/>
             <ComboBoxItem Content="Expense"/>
         </ComboBox>
-        <Label Content="Category" HorizontalAlignment="Left" Margin="60,251,0,0" VerticalAlignment="Top" FontSize="10
+        <Label Content="Category" HorizontalAlignment="Left" Margin="60,276,0,0" VerticalAlignment="Top" FontSize="10
 " Foreground="#FF565050"/>
         <ComboBox x:Name="categoryInput" Height="30" Margin="60,279,488,91" SelectionChanged="categoryInput_SelectionChanged">
         </ComboBox>
+        <Label Content="Note" HorizontalAlignment="Left" Margin="60,162,0,0" VerticalAlignment="Top" FontSize="10        " Foreground="#FF565050"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="294,-31,0,0" VerticalAlignment="Top"/>
+        <Grid>
+            <Label Content="Latest Expenses" Margin="433,233,173,130" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" />
+            <DataGrid x:Name="categoriesByExpenseDataGrid" Margin="433,276,32,42" BorderBrush="#FF2572BD" 
+              Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" HeadersVisibility="None" ClipboardCopyMode="IncludeHeader" 
+              AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid>
+            <Label Content="Latest Incomes" Margin="433,22,173,341" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" />
+            <DataGrid x:Name="incomesDataGrid" Margin="433,66,32,252" BorderBrush="#FF2572BD" 
+              Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" HeadersVisibility="None" ClipboardCopyMode="IncludeHeader" 
+              AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </Page>
