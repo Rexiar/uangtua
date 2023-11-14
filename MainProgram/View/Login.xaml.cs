@@ -20,6 +20,8 @@ namespace MainProgram
 {
     public partial class loginWindow : Window
     {
+        bool showUsernameDefault = false;
+        bool showPasswordDefault = false;
         public loginWindow()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace MainProgram
             if (isAuthenticated)
             {
                 mainMenuWindow targetWindow = new mainMenuWindow();
-                targetWindow.Left = this.Left + (this.Width - targetWindow.Width) / 2;
+                targetWindow.Left = this.Left;
                 targetWindow.Top = this.Top;
                 targetWindow.Show();
                 this.Close();
@@ -53,6 +55,35 @@ namespace MainProgram
             targetWindow.Top = this.Top;
             targetWindow.Show();
             this.Close();
+        }
+
+
+        private void usernameInput_IsKeyboardFocusedChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!showUsernameDefault)
+            {
+                usernameInput.Text = string.Empty;
+                showUsernameDefault = true;
+            }
+            else if (showUsernameDefault && usernameInput.Text == string.Empty)
+            {
+                usernameInput.Text = "Enter your username or email";
+                showUsernameDefault = false;
+            }
+        }
+
+        private void passwordInput_IsKeyboardFocusedChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (!showPasswordDefault)
+            {
+                passwordInput.Text = string.Empty;
+                showPasswordDefault = true;
+            }
+            else if (showPasswordDefault && passwordInput.Text == string.Empty)
+            {
+                passwordInput.Text = "Enter your password";
+                showPasswordDefault = false;
+            }
         }
     }
 }

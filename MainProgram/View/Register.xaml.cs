@@ -15,9 +15,6 @@ using MainProgram.Model;
 
 namespace MainProgram
 {
-    /// <summary>
-    /// Interaction logic for Register.xaml
-    /// </summary>
     public partial class registerWindow : Window
     {
         public registerWindow()
@@ -62,7 +59,7 @@ namespace MainProgram
             }
             else
             {
-                MessageBox.Show("Registration failed.");
+                MessageBox.Show("Registration Failed!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

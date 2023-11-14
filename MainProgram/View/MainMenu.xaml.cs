@@ -15,14 +15,12 @@ using MainProgram.View.Pages;
 
 namespace MainProgram.View
 {
-    /// <summary>
-    /// Interaction logic for MainMenu.xaml
-    /// </summary>
     public partial class mainMenuWindow : Window
     {
         public mainMenuWindow()
         {
             InitializeComponent();
+            Main.Content = new DashboardPage();
         }
 
         private void dashboardBtn_Click(object sender, RoutedEventArgs e)
@@ -38,6 +36,15 @@ namespace MainProgram.View
         private void transactionsBtn_Click(object sender, RoutedEventArgs e)
         {
             Main.Content = new TransactionsPage();
+        }
+
+        private void logoutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            loginWindow targetWindow = new loginWindow();
+            targetWindow.Left = this.Left;
+            targetWindow.Top = this.Top;
+            targetWindow.Show();
+            this.Close();
         }
     }
 }
