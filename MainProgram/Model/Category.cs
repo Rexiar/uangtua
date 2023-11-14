@@ -8,8 +8,8 @@ namespace MainProgram.Model
 {
     public class Category
     {
-        public int CategoryID;
-        public string Title;
+        public int CategoryID { get; set; }
+        public string Title { get; set; }
         public enum TransactionType { Expense, Income}
         public TransactionType Type = TransactionType.Expense;
 
