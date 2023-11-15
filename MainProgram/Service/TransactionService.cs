@@ -84,7 +84,7 @@ namespace MainProgram.Service
             {
                 query = "SELECT * FROM Transactions JOIN Categories ON " +
                     "Transactions.CategoryID = Categories.CategoryID "
-                    + "WHERE Categories.Type = @type";
+                    + "WHERE Categories.Type = @type LIMIT 5 ";
             }
             else
             {
@@ -100,19 +100,35 @@ namespace MainProgram.Service
                     if (!string.IsNullOrEmpty(type))
                     {
                         command.Parameters.AddWithValue("@type", type);
-                    }
-
-                    using (NpgsqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
+                        using (NpgsqlDataReader reader = command.ExecuteReader())
                         {
-                            Transaction transaction = new Transaction(
-                                categoryID: Convert.ToInt32(reader["CategoryID"]),
-                                amount: Convert.ToInt32(reader["Amount"]),
-                                note: reader["Note"].ToString(),
-                                userID: Convert.ToInt32(reader["UserID"])
-                            );
-                            transactions.Add(transaction);
+                            while (reader.Read())
+                            {
+                                Transaction transaction = new Transaction(
+                                    categoryID: Convert.ToInt32(reader["CategoryID"]),
+                                    amount: Convert.ToInt32(reader["Amount"]),
+                                    note: reader["Note"].ToString(),
+                                    userID: Convert.ToInt32(reader["UserID"])
+                                );
+                                transactions.Add(transaction);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        using (NpgsqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Transaction transaction = new Transaction(
+                                    categoryID: Convert.ToInt32(reader["CategoryID"]),
+                                    amount: Convert.ToInt32(reader["Amount"]),
+                                    note: reader["Note"].ToString(),
+                                    userID: Convert.ToInt32(reader["UserID"]),
+                                    categoryType: reader["Title"].ToString()
+                                );
+                                transactions.Add(transaction);
+                            }
                         }
                     }
                 }
