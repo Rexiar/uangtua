@@ -23,7 +23,7 @@ namespace MainProgram.Service
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@categoryID", transaction.CategoryID);
+                    command.Parameters.AddWithValue("@categoryID", (object)transaction.CategoryID ?? DBNull.Value);
                     command.Parameters.AddWithValue("@amount", transaction.Amount);
                     command.Parameters.AddWithValue("@note", transaction.Note);
                     command.Parameters.AddWithValue("@date", transaction.Date);

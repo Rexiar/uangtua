@@ -20,7 +20,7 @@ namespace MainProgram.View
         public mainMenuWindow()
         {
             InitializeComponent();
-            Main.Content = new DashboardPage();
+            Main.Content = new CategoriesPage();
         }
 
         private void dashboardBtn_Click(object sender, RoutedEventArgs e)
