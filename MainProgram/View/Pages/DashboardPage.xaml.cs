@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using MainProgram.Service;
 using MainProgram.Config;
 using MainProgram.Model;
+using System.Diagnostics;
 
 namespace MainProgram.View.Pages
 {
@@ -28,14 +29,26 @@ namespace MainProgram.View.Pages
         public DashboardPage()
         {
             InitializeComponent();
+            updateDashboard();
         }
 
         void updateDashboard()
         {
-            List<Transaction> incomes = TransactionService.GetTransactions("Income");
-            List<Transaction> expenses = TransactionService.GetTransactions("Expense");
+            int incomeAmount = 0;
+            int expenseAmount = 0;
+            List<Transaction> incomes = TransactionService.GetTransactions(true, "Income");
+            List<Transaction> expenses = TransactionService.GetTransactions(true, "Expense");
+            for (int i = 0; i < incomes.Count; i++)
+            {
+                incomeAmount += incomes[i].Amount;
+            }
+            for (int i = 0; i < expenses.Count; i++)
+            {
+                expenseAmount += expenses[i].Amount;
+            }
             
-
+            incomeLabel.Content = "Rp" + incomeAmount.ToString();
+            expenseLabel.Content = "Rp" + expenseAmount.ToString();
         }
     }
 }

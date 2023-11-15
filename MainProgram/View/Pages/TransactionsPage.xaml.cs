@@ -91,8 +91,8 @@ namespace MainProgram.View.Pages
 
         private void loadExpensesAndIncomes()
         {
-            List<Transaction> incomes = TransactionService.GetTransactions("Income");
-            List<Transaction> expenses = TransactionService.GetTransactions("Expense");
+            List<Transaction> incomes = TransactionService.GetTransactions(false, "Income");
+            List<Transaction> expenses = TransactionService.GetTransactions(false, "Expense");
 
             expensesDataGrid.ItemsSource = incomes;
             incomesDataGrid.ItemsSource = expenses;

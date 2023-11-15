@@ -74,14 +74,19 @@ namespace MainProgram.Service
             }
         }
 
-        public static List<Transaction> GetTransactions(string type = null)
+        public static List<Transaction> GetTransactions(bool full = false, string type = null)
         {
             int userID = AuthService.loggedInId;
             DBConnection dbConnection = new DBConnection();
             List<Transaction> transactions = new List<Transaction>();
             string query = "SELECT * FROM Transactions";
-
-            if (!string.IsNullOrWhiteSpace(type))
+            if (!string.IsNullOrWhiteSpace(type) && full)
+            {
+                query = "SELECT * FROM Transactions JOIN Categories ON " +
+                    "Transactions.CategoryID = Categories.CategoryID "
+                    + "WHERE Categories.Type = @type AND Transactions.userid = @userID";
+            }
+            else if (!string.IsNullOrWhiteSpace(type))
             {
                 query = "SELECT * FROM Transactions JOIN Categories ON " +
                     "Transactions.CategoryID = Categories.CategoryID "
@@ -97,7 +102,6 @@ namespace MainProgram.Service
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
-
                     if (!string.IsNullOrEmpty(type))
                     {
                         command.Parameters.AddWithValue("@type", type);
