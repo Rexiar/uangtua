@@ -12,8 +12,8 @@
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Background="White"/>
 
         <Label Content="Dashboard" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="24,67,201,28" Background="#FFD0EAD0"/>
-
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="24,67,201,28" Background="#FFD0EAD0">
+        </Border>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,84,510,222" Background="White" >
             <Grid>
                 <Label Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="120,49,0,0"/>
