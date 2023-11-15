@@ -65,16 +65,31 @@ namespace MainProgram.Service
             }
         }
 
-        public static List<Category> GetCategories()
+        public static List<Category> GetCategories(string type = null)
         {
             DBConnection dbConnection = new DBConnection();
             List<Category> categories = new List<Category>();
-            string query = "SELECT * FROM Categories";
+            string query;
+
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                query = "SELECT * FROM Categories";
+            }
+            else
+            {
+                query = "SELECT * FROM Categories WHERE Type = @type";
+            }
+
             using (NpgsqlConnection connection = dbConnection.GetConnection()) 
             { 
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection)) 
                 {
+                    if (!string.IsNullOrEmpty(type)) 
+                    {
+                        command.Parameters.AddWithValue("@type", type);
+                    }
+
                     using (NpgsqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())

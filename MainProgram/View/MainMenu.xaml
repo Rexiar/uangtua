@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MainProgram.View"
         mc:Ignorable="d"
-        Title="mainMenuWindow" Height="509" Width="1000">
+        Title="mainMenuWindow" Height="450" Width="1000">
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="498" Stroke="Black" VerticalAlignment="Top" Width="200" Fill="#FF2B2A2A" RenderTransformOrigin="0.5,0.5">
         </Rectangle>

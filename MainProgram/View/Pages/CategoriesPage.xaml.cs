@@ -12,8 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 using MainProgram.Service;
 using MainProgram.Model;
+using System.Diagnostics;
 
 namespace MainProgram.View.Pages
 {
@@ -22,9 +24,12 @@ namespace MainProgram.View.Pages
     /// </summary>
     public partial class CategoriesPage : Page
     {
+        private List<Category> allCategories;
         public CategoriesPage()
         {
             InitializeComponent();
+            allCategories = CategoryServices.GetCategories();
+            loadCategories();
         }
 
         private void addCategoryBtn_Click(object sender, RoutedEventArgs e)
@@ -48,6 +53,20 @@ namespace MainProgram.View.Pages
                     MessageBox.Show("Error while adding new category");
                 }
             }
+        }
+
+        private void categoriesByExpenseDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void loadCategories()
+        {
+            List<Category> expenseCategories = CategoryServices.GetCategories("Expense");
+            List<Category> incomeCategories = CategoryServices.GetCategories("Income");
+
+            categoriesByExpenseDataGrid.ItemsSource = expenseCategories;
+            categoriesByIncomeDataGrid.ItemsSource = incomeCategories;
         }
     }
 }
