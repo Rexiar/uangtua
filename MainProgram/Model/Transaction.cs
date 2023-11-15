@@ -12,6 +12,7 @@ namespace MainProgram.Model
         public int TransactionID { get; set; }
         public int CategoryID { get; set; }
         public Category? Category { get; set; }
+        public string CategoryType { get; set; }
         public int Amount { get; set; }
         public string Note { get; set; }
         public DateTime Date = DateTime.Now;
@@ -24,6 +25,15 @@ namespace MainProgram.Model
             Amount = amount;
             Note = note;
             UserID = userID;
+        }
+
+        public Transaction(int categoryID, int amount, string note, int userID, string categoryType)
+        {
+            CategoryID = categoryID;
+            Amount = amount;
+            Note = note;
+            UserID = userID;
+            CategoryType = categoryType;
         }
     }
 }

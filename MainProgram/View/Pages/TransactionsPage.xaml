@@ -40,11 +40,13 @@
         <Label Content="Label" HorizontalAlignment="Left" Margin="294,-31,0,0" VerticalAlignment="Top"/>
         <Grid>
             <Label Content="Latest Expenses" Margin="433,233,173,130" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" />
-            <DataGrid x:Name="categoriesByExpenseDataGrid" Margin="433,276,32,42" BorderBrush="#FF2572BD" 
+            <DataGrid x:Name="expensesDataGrid" Margin="433,276,32,42" BorderBrush="#FF2572BD" 
               Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" HeadersVisibility="None" ClipboardCopyMode="IncludeHeader" 
               AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding Note}" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding Amount}" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding CategoryType}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -54,7 +56,9 @@
               Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" HeadersVisibility="None" ClipboardCopyMode="IncludeHeader" 
               AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding Note}" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding Amount}" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding CategoryType}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
