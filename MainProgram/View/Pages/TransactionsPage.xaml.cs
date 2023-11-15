@@ -28,6 +28,7 @@ namespace MainProgram.View.Pages
             InitializeComponent();
             allCategories = CategoryServices.GetCategories();
             UpdateCategoryInputCB();
+            loadExpensesAndIncomes();
         }
 
         private void transactionTypeInput_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -66,13 +67,12 @@ namespace MainProgram.View.Pages
 
         private void addTransactionBtn_Click(object sender, RoutedEventArgs e)
         {
-            string transactionName = transactionNameInput.Text;
             int amount = int.Parse(amountInput.Text);
             string note = noteInput.Text;
             string transactionCategory = categoryInput.SelectedItem?.ToString();
             Category selectedCategory = allCategories.FirstOrDefault(cat => cat.Title == transactionCategory);
             int transactionCategoryID = selectedCategory.CategoryID;
-            int userID = AuthService.loggedInId;
+            int userID = 1;
 
             Transaction newTransaction = new Transaction(transactionCategoryID, amount, note, userID);
 
@@ -87,6 +87,15 @@ namespace MainProgram.View.Pages
                 MessageBox.Show("Error while adding new transaction");
             }
        
+        }
+
+        private void loadExpensesAndIncomes()
+        {
+            List<Transaction> incomes = TransactionService.GetTransactions("Income");
+            List<Transaction> expenses = TransactionService.GetTransactions("Expense");
+
+            expensesDataGrid.ItemsSource = incomes;
+            incomesDataGrid.ItemsSource = expenses;
         }
     }
 }
