@@ -24,5 +24,10 @@ namespace MainProgram.View.Pages
         {
             InitializeComponent();
         }
+
+        void updateDashboard()
+        {
+
+        }
     }
 }
