@@ -95,6 +95,7 @@ namespace MainProgram.Service
                         while (reader.Read())
                         {
                             Category category = new Category(
+                                categoryID: Convert.ToInt32(reader["CategoryID"]),
                                 title: reader["Title"].ToString(),
                                 type: (Category.TransactionType)Enum.Parse(typeof(Category.TransactionType), reader["Type"].ToString())
                             );

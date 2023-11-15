@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MainProgram.View.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="400" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="DashboardPage">
 
     <Grid>
@@ -14,19 +14,19 @@
         <Label Content="Dashboard" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="24,67,201,28" Background="#FFD0EAD0">
         </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,84,510,222" Background="White" >
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,84,510,270" Background="White" >
             <Grid>
                 <Label Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="120,49,0,0"/>
                 <Label Content="INCOME" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="7,10,0,0" FontSize="18"/>
             </Grid>
         </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="312,84,240,222" Background="White" >
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="312,84,240,270" Background="White" >
             <Grid>
                 <Label Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="110,49,0,0"/>
                 <Label Content="EXPENSE" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="7,10,0,0" FontSize="18"/>
             </Grid>
         </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,210,308,62" Background="White" RenderTransformOrigin="0.5,0.5" >
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,203,240,62" Background="White" RenderTransformOrigin="0.5,0.5" >
             <Label Content="Total Savings" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,10,0,0" FontSize="20"/>
         </Border>
 

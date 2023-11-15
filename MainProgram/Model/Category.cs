@@ -20,5 +20,15 @@ namespace MainProgram.Model
             Title = title;
             Type = type;
         }
+
+        public Category(
+            int categoryID,
+            string title,
+            TransactionType type)
+        {
+            CategoryID = categoryID;
+            Title = title;
+            Type = type;
+        }
     }
 }

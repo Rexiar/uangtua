@@ -23,7 +23,7 @@ namespace MainProgram.Service
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@categoryID", transaction.CategoryID);
+                    command.Parameters.AddWithValue("@categoryID", (object)transaction.CategoryID ?? DBNull.Value);
                     command.Parameters.AddWithValue("@amount", transaction.Amount);
                     command.Parameters.AddWithValue("@note", transaction.Note);
                     command.Parameters.AddWithValue("@date", transaction.Date);
@@ -74,16 +74,34 @@ namespace MainProgram.Service
             }
         }
 
-        public static List<Transaction> GetTransactions()
+        public static List<Transaction> GetTransactions(string type = null)
         {
             DBConnection dbConnection = new DBConnection();
             List<Transaction> transactions = new List<Transaction>();
             string query = "SELECT * FROM Transactions";
+
+            if (string.IsNullOrWhiteSpace(type))
+            {
+                query = "SELECT * FROM Transactions JOIN Categories ON " +
+                    "Transactions.CategoryID = Categories.CategoryID "
+                    + "WHERE Categories.Type = @type";
+            }
+            else
+            {
+                query = "SELECT * FROM Transactions";
+            }
+
             using (NpgsqlConnection connection = dbConnection.GetConnection())
             {
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
+
+                    if (!string.IsNullOrEmpty(type))
+                    {
+                        command.Parameters.AddWithValue("@type", type);
+                    }
+
                     using (NpgsqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
