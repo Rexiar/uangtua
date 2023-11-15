@@ -72,7 +72,7 @@ namespace MainProgram.View.Pages
             string transactionCategory = categoryInput.SelectedItem?.ToString();
             Category selectedCategory = allCategories.FirstOrDefault(cat => cat.Title == transactionCategory);
             int transactionCategoryID = selectedCategory.CategoryID;
-            int userID = 1;
+            int userID = AuthService.loggedInId;
 
             Transaction newTransaction = new Transaction(transactionCategoryID, amount, note, userID);
 

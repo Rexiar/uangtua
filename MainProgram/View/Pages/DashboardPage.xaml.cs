@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Npgsql;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MainProgram.Service;
+using MainProgram.Config;
+using MainProgram.Model;
 
 namespace MainProgram.View.Pages
 {
@@ -27,6 +32,9 @@ namespace MainProgram.View.Pages
 
         void updateDashboard()
         {
+            List<Transaction> incomes = TransactionService.GetTransactions("Income");
+            List<Transaction> expenses = TransactionService.GetTransactions("Expense");
+            
 
         }
     }

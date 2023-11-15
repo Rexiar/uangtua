@@ -76,15 +76,16 @@ namespace MainProgram.Service
 
         public static List<Transaction> GetTransactions(string type = null)
         {
+            int userID = AuthService.loggedInId;
             DBConnection dbConnection = new DBConnection();
             List<Transaction> transactions = new List<Transaction>();
             string query = "SELECT * FROM Transactions";
 
-            if (string.IsNullOrWhiteSpace(type))
+            if (!string.IsNullOrWhiteSpace(type))
             {
                 query = "SELECT * FROM Transactions JOIN Categories ON " +
                     "Transactions.CategoryID = Categories.CategoryID "
-                    + "WHERE Categories.Type = @type LIMIT 5 ";
+                    + "WHERE Categories.Type = @type AND Transactions.userid = @userID LIMIT 5 ";
             }
             else
             {
