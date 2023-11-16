@@ -29,28 +29,68 @@ namespace MainProgram.View.Pages
     /// </summary>
     public partial class DashboardPage : Page
     {
+        public class CombinedData
+        {
+            public DateTime Date { get; set; }
+            public double Income { get; set; }
+            public double Expense { get; set; }
+            public double Net => Income - Expense;
+        }
         public DashboardPage()
         {
             InitializeComponent();
             updateDashboard();
-            MyChart.Series = new SeriesCollection
+            var incomeData = TransactionService.GetTransactions(true, "Income");
+            var expenseData = TransactionService.GetTransactions(true, "Expense");
+
+            ChartValues<double> values = new ChartValues<double>();
+            List<string> labels = new List<string>();
+
+            var combinedData = new Dictionary<DateTime, CombinedData>();
+
+            foreach (var point in incomeData)
             {
+                var date = point.Date.Date;
+                if (!combinedData.ContainsKey(date))
+                    combinedData[date] = new CombinedData { Date = date };
+
+                combinedData[date].Income += point.Amount;
+            }
+
+            foreach (var point in expenseData)
+            {
+                var date = point.Date.Date;
+                if (!combinedData.ContainsKey(date))
+                    combinedData[date] = new CombinedData { Date = date };
+
+                combinedData[date].Expense += point.Amount;
+            }
+            foreach (var entry in combinedData.OrderBy(e => e.Key))
+            {
+                values.Add(entry.Value.Net);
+                labels.Add(entry.Key.ToString("d"));
+            }
+
+            MyChart.Series = new SeriesCollection
+        {
             new LineSeries
             {
-                Values = new ChartValues<double> { 10, 5, 7, 4 },
+                Values = values,
                 PointGeometry = null
             }
-            };
+        };
 
+            MyChart.AxisX.Clear();
             MyChart.AxisX.Add(new Axis
             {
-                Title = "Axis X Title",
-                Labels = new[] {""}
+                Title = "Date",
+                Labels = labels
             });
 
+            MyChart.AxisY.Clear();
             MyChart.AxisY.Add(new Axis
             {
-                Title = "Axis Y Title",
+                Title = "Value",
                 LabelFormatter = value => value.ToString("N")
             });
         }
