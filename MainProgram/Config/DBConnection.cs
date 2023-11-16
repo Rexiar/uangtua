@@ -13,7 +13,7 @@ namespace MainProgram.Config
         public NpgsqlConnection GetConnection()
         {
             //string connectionString = "Host=localhost;Port=5432;Database=UANGTUADB;Username=postgres;Password=admin";
-            string connectionString = "Host=165.22.96.198;Database=uangtuadb;Username=postgres;Password=admin";
+            string connectionString = "Host=4.240.115.134;Username=postgres;Password=admin;Database=uangtuadb";
             NpgsqlConnection connection = new NpgsqlConnection(connectionString);
             return connection;
         }
