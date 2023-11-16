@@ -50,5 +50,10 @@ namespace MainProgram.View
             targetWindow.Show();
             this.Close();
         }
+
+        private void userProfilesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new ProfilePage(loggedInUser);
+        }
     }
 }

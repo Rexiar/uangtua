@@ -26,6 +26,9 @@ namespace MainProgram.View.Pages
         {
             InitializeComponent();
             loggedInUser = user;
+            usernameLabel.Text = $"{loggedInUser.Username}";
+            emailLabel.Text = $"{loggedInUser.Email}";
+            contactsLabel.Text = $"{loggedInUser.Contacts}";
         }
     }
 }
