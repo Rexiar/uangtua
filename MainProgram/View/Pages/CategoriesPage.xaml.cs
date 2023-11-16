@@ -47,6 +47,7 @@ namespace MainProgram.View.Pages
                 if (isCreated)
                 {
                     MessageBox.Show("New Category has been created");
+                    loadCategories();
                 }
                 else
                 {
@@ -55,24 +56,13 @@ namespace MainProgram.View.Pages
             }
         }
 
-         private void loadCategories()
+        private void loadCategories()
         {
             List<Category> expenseCategories = CategoryServices.GetCategories("Expense");
             List<Category> incomeCategories = CategoryServices.GetCategories("Income");
-            if (typeInput.SelectedItem is ComboBoxItem selectedTypeItem)
-            {
-                string categoryType = selectedTypeItem.Content.ToString();
-                Enum.TryParse<Category.TransactionType>(categoryType, out Category.TransactionType transactionType);
 
-                if (transactionType == Category.TransactionType.Income)
-                {
-                    DatagridCategory.ItemsSource = incomeCategories;
-                }
-                else if (transactionType == Category.TransactionType.Expense)
-                {
-                    DatagridCategory.ItemsSource = expenseCategories;
-                }
-            }
+            categoriesByExpenseDataGrid.ItemsSource = expenseCategories;
+            categoriesByIncomeDataGrid.ItemsexplorerSource = incomeCategories;
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
