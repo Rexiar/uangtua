@@ -29,6 +29,7 @@ namespace MainProgram.View.Pages
     /// </summary>
     public partial class DashboardPage : Page
     {
+        private User loggedInUser;
         public class CombinedData
         {
             public DateTime Date { get; set; }
@@ -36,9 +37,11 @@ namespace MainProgram.View.Pages
             public double Expense { get; set; }
             public double Net => Income - Expense;
         }
-        public DashboardPage()
+        public DashboardPage(User user)
         {
             InitializeComponent();
+            loggedInUser = user;
+
             updateDashboard();
             DisplayPieChart();
             var incomeData = TransactionService.GetTransactions(true, "Income");

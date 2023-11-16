@@ -12,30 +12,34 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MainProgram.View.Pages;
+using MainProgram.Model;
 
 namespace MainProgram.View
 {
     public partial class mainMenuWindow : Window
     {
-        public mainMenuWindow()
+        private User loggedInUser;
+
+        public mainMenuWindow(User user)
         {
             InitializeComponent();
-            Main.Content = new DashboardPage();
+            loggedInUser = user;
+            Main.Content = new DashboardPage(loggedInUser);
         }
 
         private void dashboardBtn_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new DashboardPage();
+            Main.Content = new DashboardPage(loggedInUser);
         }
 
         private void categoriesBtn_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new CategoriesPage();
+            Main.Content = new CategoriesPage(loggedInUser);
         }
 
         private void transactionsBtn_Click(object sender, RoutedEventArgs e)
         {
-            Main.Content = new TransactionsPage();
+            Main.Content = new TransactionsPage(loggedInUser);
         }
 
         private void logoutBtn_Click(object sender, RoutedEventArgs e)
