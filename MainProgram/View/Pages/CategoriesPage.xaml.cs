@@ -55,18 +55,29 @@ namespace MainProgram.View.Pages
             }
         }
 
-        private void categoriesByExpenseDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void loadCategories()
+         private void loadCategories()
         {
             List<Category> expenseCategories = CategoryServices.GetCategories("Expense");
             List<Category> incomeCategories = CategoryServices.GetCategories("Income");
+            if (typeInput.SelectedItem is ComboBoxItem selectedTypeItem)
+            {
+                string categoryType = selectedTypeItem.Content.ToString();
+                Enum.TryParse<Category.TransactionType>(categoryType, out Category.TransactionType transactionType);
 
-            categoriesByExpenseDataGrid.ItemsSource = expenseCategories;
-            categoriesByIncomeDataGrid.ItemsSource = incomeCategories;
+                if (transactionType == Category.TransactionType.Income)
+                {
+                    DatagridCategory.ItemsSource = incomeCategories;
+                }
+                else if (transactionType == Category.TransactionType.Expense)
+                {
+                    DatagridCategory.ItemsSource = expenseCategories;
+                }
+            }
+        }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
         }
     }
 }

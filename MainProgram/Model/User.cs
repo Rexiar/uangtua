@@ -10,11 +10,11 @@ namespace MainProgram.Model
     {
         public int UserID;
 
-        public string Username;
-        public string Email;
-        public string Contacts;
-        protected string Password;
-        public List<Transaction>? Transactions;
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Contacts { get; set; }
+        public string Password { get; set; }
+        public List<Transaction> Transactions { get; set; }
         public UserBase(
             string username,
             string email,
