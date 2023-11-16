@@ -11,7 +11,7 @@
 
     <Grid>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Background="White"/>
-
+        <TextBlock x:Name="welcomeLabel" HorizontalAlignment="Left" Margin="24,0,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="Green"/>
         <Label Content="Dashboard" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="24,67,201,28" Background="#FFD0EAD0">
         </Border>
@@ -42,5 +42,6 @@
             <lvc:PieChart x:Name="expensePieChart" LegendLocation="Bottom" Hoverable="False" DataTooltip="{x:Null}" Margin="628,271,42,17" Series="{Binding ExpenseDistributions}">
             </lvc:PieChart>
         </Grid>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="-47,62,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
