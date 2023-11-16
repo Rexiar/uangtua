@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MainProgram
+namespace MainProgram.View.Pages
 {
     /// <summary>
-    /// Interaction logic for Transaction.xaml
+    /// Interaction logic for ProfilePage.xaml
     /// </summary>
-    public partial class Transaction : Window
+    public partial class ProfilePage : Page
     {
-        public Transaction()
+        public ProfilePage()
         {
             InitializeComponent();
         }

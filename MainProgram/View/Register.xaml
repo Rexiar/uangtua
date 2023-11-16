@@ -167,6 +167,6 @@
 
         <Button x:Name="registerBtn" Style="{DynamicResource RoundedButtonStyle}" Content="Sign Up" HorizontalAlignment="Left" Margin="101,317,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326" Click="registerBtn_Click"/>
         <Label Content="Already have an account?" HorizontalAlignment="Left" Margin="133,348,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF7F7575"/>
-        <Label x:Name="loginRedirect" Content="Log In" HorizontalAlignment="Left" Margin="258,348,0,0" VerticalAlignment="Top" FontSize="10" Foreground="Green" MouseLeftButtonDown="loginRedirect_MouseLeftButtonDown"/>
+        <Label x:Name="redirectToLoginBtn" Content="Log In" HorizontalAlignment="Left" Margin="258,348,0,0" VerticalAlignment="Top" FontSize="10" Foreground="Green" MouseLeftButtonDown="loginRedirect_MouseLeftButtonDown"/>
     </Grid>
 </Window>

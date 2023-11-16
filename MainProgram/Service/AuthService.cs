@@ -11,6 +11,7 @@ namespace MainProgram.Service
 {
     public class AuthService
     {
+        public static int loggedInId  = 0;
         public static bool RegisterUser(User user)
         {
             DBConnection dbConnection = new DBConnection();
@@ -23,14 +24,13 @@ namespace MainProgram.Service
                     command.Parameters.AddWithValue("@username", user.Username);
                     command.Parameters.AddWithValue("@email", user.Email);
                     command.Parameters.AddWithValue("@contacts", user.Contacts);
-                    command.Parameters.AddWithValue("@password", user.Password);
+                    command.Parameters.AddWithValue("@password", user.GetPassword());
 
                     int rowsAffected = command.ExecuteNonQuery();
                     return rowsAffected > 0;
                 }
             }
         }
-
         public static bool LoginUser(string username, string password) 
         { 
             DBConnection dbConnection = new DBConnection();
@@ -42,10 +42,14 @@ namespace MainProgram.Service
                 {
                     command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@password", password);
-
+                    command.ExecuteNonQuery ();
                     using (NpgsqlDataReader reader = command.ExecuteReader())
                     {
-                        return reader.Read();
+                        while (reader.Read())
+                        {
+                            loggedInId = (int)Convert.ToInt32(reader["UserID"]);
+                        }
+                        return (loggedInId != 0);
                     }
                 }
             }
