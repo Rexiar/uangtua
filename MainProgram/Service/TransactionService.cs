@@ -102,6 +102,7 @@ namespace MainProgram.Service
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@userID", userID);
                     if (!string.IsNullOrEmpty(type))
                     {
                         command.Parameters.AddWithValue("@type", type);

@@ -31,7 +31,7 @@
             <Label Content="Total Savings" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,-1,0,0" FontSize="20"/>
             
         </Border>
-        <lvc:CartesianChart x:Name="MyChart" Margin="34,213,240,38"/>
-
+        <lvc:CartesianChart x:Name="MyChart" Margin="34,213,240,42"/>
+        
     </Grid>
 </Page>
