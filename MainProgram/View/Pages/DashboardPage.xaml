@@ -29,9 +29,18 @@
         </Border>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,203,240,62" Background="White" RenderTransformOrigin="0.5,0.5" >
             <Label Content="Total Savings" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,-1,0,0" FontSize="20"/>
-            
+
         </Border>
         <lvc:CartesianChart x:Name="MyChart" Margin="34,213,240,42"/>
-        
+        <Grid>
+            <Label Content="Income Chart" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="619,25,0,0" FontSize="18"/>
+            <lvc:PieChart x:Name="incomePieChart" LegendLocation="Bottom" Hoverable="False" DataTooltip="{x:Null}" Margin="628,63,42,225" Series="{Binding IncomeDistributions}">
+            </lvc:PieChart>
+        </Grid>
+        <Grid>
+            <Label Content="Expense Chart" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="619,234,0,0" FontSize="18"/>
+            <lvc:PieChart x:Name="expensePieChart" LegendLocation="Bottom" Hoverable="False" DataTooltip="{x:Null}" Margin="628,271,42,17" Series="{Binding ExpenseDistributions}">
+            </lvc:PieChart>
+        </Grid>
     </Grid>
 </Page>

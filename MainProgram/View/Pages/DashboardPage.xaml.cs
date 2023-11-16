@@ -40,9 +40,11 @@ namespace MainProgram.View.Pages
         {
             InitializeComponent();
             updateDashboard();
+            DisplayPieChart();
             var incomeData = TransactionService.GetTransactions(true, "Income");
             var expenseData = TransactionService.GetTransactions(true, "Expense");
 
+            DataContext = this;
             ChartValues<double> values = new ChartValues<double>();
             List<string> labels = new List<string>();
 
@@ -95,7 +97,8 @@ namespace MainProgram.View.Pages
             });
         }
 
-        void updateDashboard()
+        public Func<ChartPoint, string> PointLabel { get; set; }
+        private void updateDashboard()
         {
             int incomeAmount = 0;
             int expenseAmount = 0;
@@ -112,6 +115,52 @@ namespace MainProgram.View.Pages
             
             incomeLabel.Content = "Rp" + incomeAmount.ToString();
             expenseLabel.Content = "Rp" + expenseAmount.ToString();
+        }
+
+        private void DisplayPieChart()
+        {
+            TransactionService transactionService = new TransactionService();
+            Dictionary<string, double> expenseData = transactionService.GetByCategoriesDistributions("Expense");
+            Dictionary<string, double> incomeData = transactionService.GetByCategoriesDistributions("Income");
+
+            SeriesCollection expenseDistributions = new SeriesCollection();
+            SeriesCollection incomeDistributions = new SeriesCollection();
+
+            double totalExpense = expenseData.Values.Sum();
+            double totalIncome = incomeData.Values.Sum();
+
+            foreach (var dataPoint in expenseData)
+            {
+                expenseDistributions.Add(new PieSeries
+                {
+                    Title = dataPoint.Key,
+                    Values = new ChartValues<double> { dataPoint.Value/totalExpense },
+                    DataLabels = true,
+                    LabelPoint = point => $"{point.Y:P}"  
+                });
+            }
+
+            foreach (var dataPoint in incomeData)
+            {
+                incomeDistributions.Add(new PieSeries
+                {
+                    Title = dataPoint.Key,
+                    Values = new ChartValues<double> { dataPoint.Value/totalIncome },
+                    DataLabels = true,
+                    LabelPoint = point => $"{point.Y:P}"
+                });
+            }
+
+            expensePieChart.Series = expenseDistributions;
+            expensePieChart.LegendLocation = LegendLocation.Bottom;
+            expensePieChart.Hoverable = false;
+            expensePieChart.DataTooltip = null;
+
+
+            incomePieChart.Series = incomeDistributions;
+            incomePieChart.LegendLocation = LegendLocation.Bottom;
+            incomePieChart.Hoverable = false;
+            incomePieChart.DataTooltip = null;
         }
     }
 }

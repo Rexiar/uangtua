@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -141,6 +142,35 @@ namespace MainProgram.Service
             }
 
             return transactions;
+        }
+
+        public Dictionary<string, double> GetByCategoriesDistributions(string type)
+        {
+            Dictionary<string, double> categoriesDistributions = new Dictionary<string, double>();
+            DBConnection dbConnection = new DBConnection();
+            string query = "SELECT c.Title, SUM(t.Amount) AS TotalAmount FROM Transactions t JOIN " +
+                            "Categories c ON t.CategoryID = c.CategoryID WHERE c.Type = @type GROUP BY c.Title";
+            using (NpgsqlConnection connection = dbConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@type", type);
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string categoryTitle = reader["Title"].ToString();
+                            double totalAmount = Convert.ToDouble(reader["TotalAmount"]);
+
+                            categoriesDistributions.Add(categoryTitle, totalAmount);
+                        }
+                    }
+                }
+            }
+
+            return categoriesDistributions;
         }
     }
 }

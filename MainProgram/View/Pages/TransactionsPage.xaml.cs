@@ -98,5 +98,21 @@ namespace MainProgram.View.Pages
             expensesDataGrid.ItemsSource = incomes;
             incomesDataGrid.ItemsSource = expenses;
         }
+
+        private void deleteExpenseBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void deleteIncomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show("Failed to delete the income transaction.");
+        }
+
+        private void updateIncomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Failed to delete the income transaction.");
+        }
     }
 }

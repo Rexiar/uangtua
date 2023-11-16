@@ -39,13 +39,22 @@
             <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="433,22,32,384" Background="#FF15B326">
                 <Label Content="Latest Expenses" Margin="70,0,71,-2" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" Foreground="White"/>
             </Border>
-            <DataGrid x:Name="expensesDataGrid" Margin="433,276,32,42" BorderBrush="#FF2572BD" 
-              Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" ClipboardCopyMode="IncludeHeader" 
+            <DataGrid x:Name="expensesDataGrid" Margin="433,276,32,42" BorderBrush="#FF2572BD"
+              Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" ClipboardCopyMode="IncludeHeader"
               AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Note" Binding="{Binding Note}" Width="100"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="120"/>
-                    <DataGridTextColumn Header="Category" Binding="{Binding CategoryType}" />
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="100"/>
+                    <DataGridTextColumn Header="Category" Binding="{Binding CategoryType}" Width="80"/>
+                    <DataGridTemplateColumn Header="Action" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ContentControl>
+                                    <Button x:Name="deleteExpenseBtn"  Content="Delete" Click="deleteExpenseBtn_Click" Background="Red" Foreground="White"/>
+                                </ContentControl>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
@@ -53,13 +62,23 @@
             <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="433,225,32,181" Background="#FF15B326">
                 <Label Content="Latest Incomes" Margin="70,0,71,-2" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" Foreground="White"/>
             </Border>
-            <DataGrid x:Name="incomesDataGrid" Margin="433,71,32,247" BorderBrush="#FF2572BD" 
+            <DataGrid x:Name="incomesDataGrid" Margin="433,74,32,244" BorderBrush="#FF2572BD" 
               Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" ClipboardCopyMode="IncludeHeader" 
               AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Note" Binding="{Binding Note}" Width="100"/>
-                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="120"/>
-                    <DataGridTextColumn Header="Category" Binding="{Binding CategoryType}" />
+                    <DataGridTextColumn Header="Amount" Binding="{Binding Amount}" Width="100"/>
+                    <DataGridTextColumn Header="Category" Binding="{Binding CategoryType}" Width="80"/>
+                    <DataGridTemplateColumn Header="Action" Width="120">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Button Content="Update" Click="updateIncomeBtn_Click" Background="Blue" Foreground="White"/>
+                                    <Button Content="Delete" Click="deleteIncomeBtn_Click" Background="Red" Foreground="White"/>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
