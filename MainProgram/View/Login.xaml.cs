@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MainProgram.Model;
 
 namespace MainProgram
 {
@@ -33,13 +34,15 @@ namespace MainProgram
             string username = usernameInput.Text;
             string password = passwordInput.Text;
 
-            bool isAuthenticated = AuthService.LoginUser(username, password);
-            if (isAuthenticated)
+            User loggedInUser = AuthService.LoginUser(username, password);
+
+            if (loggedInUser != null)
             {
-                mainMenuWindow targetWindow = new mainMenuWindow();
-                targetWindow.Left = this.Left;
-                targetWindow.Top = this.Top;
-                targetWindow.Show();
+                // Store user information in MainWindow
+                mainMenuWindow main = new mainMenuWindow(loggedInUser);
+                main.Left = this.Left;
+                main.Top = this.Top;
+                main.Show();
                 this.Close();
             }
             else

@@ -25,10 +25,13 @@ namespace MainProgram.View.Pages
     public partial class CategoriesPage : Page
     {
         private List<Category> allCategories;
-        public CategoriesPage()
+        private User loggedInUser;
+
+        public CategoriesPage(User user)
         {
             InitializeComponent();
             allCategories = CategoryServices.GetCategories();
+            loggedInUser = user;
             loadCategories();
         }
 

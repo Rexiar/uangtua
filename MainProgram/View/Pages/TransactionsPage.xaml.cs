@@ -23,9 +23,12 @@ namespace MainProgram.View.Pages
     public partial class TransactionsPage : Page
     {
         private List<Category> allCategories;
-        public TransactionsPage()
+        private User loggedInUser;
+        public TransactionsPage(User user)
         {
             InitializeComponent();
+            loggedInUser = user;
+
             allCategories = CategoryServices.GetCategories();
             UpdateCategoryInputCB();
             loadExpensesAndIncomes();
