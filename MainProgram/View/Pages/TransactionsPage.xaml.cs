@@ -81,6 +81,7 @@ namespace MainProgram.View.Pages
             if (isCreated)
             {
                 MessageBox.Show("New Transaction has been created");
+                loadExpensesAndIncomes();
             }
             else
             {

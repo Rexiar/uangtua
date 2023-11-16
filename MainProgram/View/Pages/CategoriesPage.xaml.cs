@@ -62,7 +62,7 @@ namespace MainProgram.View.Pages
             List<Category> incomeCategories = CategoryServices.GetCategories("Income");
 
             categoriesByExpenseDataGrid.ItemsSource = expenseCategories;
-            categoriesByIncomeDataGrid.ItemsexplorerSource = incomeCategories;
+            categoriesByIncomeDataGrid.ItemsSource = incomeCategories;
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
