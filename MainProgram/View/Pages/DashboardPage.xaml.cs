@@ -18,6 +18,9 @@ using MainProgram.Service;
 using MainProgram.Config;
 using MainProgram.Model;
 using System.Diagnostics;
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.Wpf.Charts.Base;
 
 namespace MainProgram.View.Pages
 {
@@ -30,6 +33,26 @@ namespace MainProgram.View.Pages
         {
             InitializeComponent();
             updateDashboard();
+            MyChart.Series = new SeriesCollection
+            {
+            new LineSeries
+            {
+                Values = new ChartValues<double> { 10, 5, 7, 4 },
+                PointGeometry = null
+            }
+            };
+
+            MyChart.AxisX.Add(new Axis
+            {
+                Title = "Axis X Title",
+                Labels = new[] {""}
+            });
+
+            MyChart.AxisY.Add(new Axis
+            {
+                Title = "Axis Y Title",
+                LabelFormatter = value => value.ToString("N")
+            });
         }
 
         void updateDashboard()

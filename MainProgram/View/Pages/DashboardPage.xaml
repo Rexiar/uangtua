@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MainProgram.View.Pages"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DashboardPage">
@@ -27,8 +28,10 @@
             </Grid>
         </Border>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,203,240,62" Background="White" RenderTransformOrigin="0.5,0.5" >
-            <Label Content="Total Savings" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,10,0,0" FontSize="20"/>
+            <Label Content="Total Savings" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,-1,0,0" FontSize="20"/>
+            
         </Border>
+        <lvc:CartesianChart x:Name="MyChart" Margin="34,213,240,38"/>
 
     </Grid>
 </Page>

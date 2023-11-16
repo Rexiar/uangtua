@@ -104,7 +104,6 @@ namespace MainProgram.Service
                     }
                 }
             }
-
             return categories;
         }
     }
