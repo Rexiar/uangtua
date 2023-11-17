@@ -62,6 +62,7 @@ namespace MainProgram.View.Pages
                     combinedData[date] = new CombinedData { Date = date };
 
                 combinedData[date].Income += point.Amount;
+                Debug.WriteLine(incomeData[0].Date.ToString());
             }
 
             foreach (var point in expenseData)

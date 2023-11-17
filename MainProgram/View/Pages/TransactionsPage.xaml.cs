@@ -78,7 +78,7 @@ namespace MainProgram.View.Pages
             int transactionCategoryID = selectedCategory.CategoryID;
             MessageBox.Show($"User ID: {userID}");
 
-            Transaction newTransaction = new Transaction(transactionCategoryID, amount, note, userID);
+            Transaction newTransaction = new Transaction(transactionCategoryID, amount, note, userID, DateTime.Now);
 
             bool isCreated = TransactionService.AddTransaction(newTransaction);
 

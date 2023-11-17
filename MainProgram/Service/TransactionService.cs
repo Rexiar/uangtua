@@ -114,7 +114,8 @@ namespace MainProgram.Service
                                     categoryID: Convert.ToInt32(reader["CategoryID"]),
                                     amount: Convert.ToInt32(reader["Amount"]),
                                     note: reader["Note"].ToString(),
-                                    userID: Convert.ToInt32(reader["UserID"])
+                                    userID: Convert.ToInt32(reader["UserID"]),
+                                    date: Convert.ToDateTime(reader["date"])
                                 );
                                 transactions.Add(transaction);
                             }
@@ -131,7 +132,8 @@ namespace MainProgram.Service
                                     amount: Convert.ToInt32(reader["Amount"]),
                                     note: reader["Note"].ToString(),
                                     userID: Convert.ToInt32(reader["UserID"]),
-                                    categoryType: reader["Title"].ToString()
+                                    categoryType: reader["Title"].ToString(),
+                                    date: Convert.ToDateTime(reader["date"])
                                 );
                                 transactions.Add(transaction);
                             }

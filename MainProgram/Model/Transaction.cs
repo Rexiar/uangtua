@@ -14,30 +14,32 @@ namespace MainProgram.Model
         public Category Category { get; set; }
         public int Amount { get; set; }
         public string Note { get; set; }
-        public DateTime Date = DateTime.Now;
+        public DateTime Date { get; set; }
         public int UserID;
         public string CategoryType { get; set; }
         public User? User;
     
 
-        public Transaction(int categoryID, int amount, string note, int userID)
+        public Transaction(int categoryID, int amount, string note, int userID, DateTime date)
         {
             CategoryID = categoryID;
             Amount = amount;
             Note = note;
             UserID = userID;
+            Date = date;
         }
 
-        public Transaction(int transactionID, int categoryID, int amount, string note, int userID, string categoryType)
+        public Transaction(int categoryID, int amount, string note, int userID, string categoryType, DateTime date)
         {
             CategoryID = categoryID;
             Amount = amount;
             Note = note;
             UserID = userID;
             CategoryType = categoryType;
+            Date = date;
         }
 
-        public Transaction(int categoryID, int amount, string note, int userID, string? categoryType) : this(categoryID, amount, note, userID)
+        public Transaction(int categoryID, int amount, string note, int userID, string? categoryType) : this(categoryID, amount, note, userID, DateTime.Now)
         {
         }
     }
