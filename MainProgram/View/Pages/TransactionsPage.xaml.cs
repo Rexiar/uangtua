@@ -76,7 +76,7 @@ namespace MainProgram.View.Pages
             string transactionCategory = categoryInput.SelectedItem?.ToString();
             Category selectedCategory = allCategories.FirstOrDefault(cat => cat.Title == transactionCategory);
             int transactionCategoryID = selectedCategory.CategoryID;
-            MessageBox.Show($"User ID: {userID}");
+            //MessageBox.Show($"User ID: {userID}");
 
             Transaction newTransaction = new Transaction(transactionCategoryID, amount, note, userID, DateTime.Now);
 
@@ -106,18 +106,31 @@ namespace MainProgram.View.Pages
 
         private void deleteExpenseBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            Button btn = sender as Button;
+            if (btn.DataContext is Transaction item)
+            {
+                string note = item.TransactionID.ToString();
+                System.Diagnostics.Debug.WriteLine(note);
+                TransactionService.DeleteTransaction(item.TransactionID);
+            }
+            loadExpensesAndIncomes();
         }
 
         private void deleteIncomeBtn_Click(object sender, RoutedEventArgs e)
         {
-
-            MessageBox.Show("Failed to delete the income transaction.");
+            Button btn = sender as Button;
+            if (btn.DataContext is Transaction item)
+            {
+                string note = item.TransactionID.ToString();
+                System.Diagnostics.Debug.WriteLine(note);
+                TransactionService.DeleteTransaction(item.TransactionID);
+            }
+            loadExpensesAndIncomes();
         }
 
         private void updateIncomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Failed to update the income transaction.");
+            loadExpensesAndIncomes();
         }
     }
 }

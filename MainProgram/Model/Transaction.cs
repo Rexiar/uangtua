@@ -20,16 +20,17 @@ namespace MainProgram.Model
         public User? User;
     
 
-        public Transaction(int categoryID, int amount, string note, int userID, DateTime date)
+        public Transaction(int categoryID, int amount, string note, int userID, DateTime date, int transactionid = 0)
         {
             CategoryID = categoryID;
             Amount = amount;
             Note = note;
             UserID = userID;
             Date = date;
+            TransactionID = transactionid;
         }
 
-        public Transaction(int categoryID, int amount, string note, int userID, string categoryType, DateTime date)
+        public Transaction(int categoryID, int amount, string note, int userID, string categoryType, DateTime date, int transactionid = 0)
         {
             CategoryID = categoryID;
             Amount = amount;
@@ -37,6 +38,7 @@ namespace MainProgram.Model
             UserID = userID;
             CategoryType = categoryType;
             Date = date;
+            TransactionID = transactionid;
         }
 
         public Transaction(int categoryID, int amount, string note, int userID, string? categoryType) : this(categoryID, amount, note, userID, DateTime.Now)

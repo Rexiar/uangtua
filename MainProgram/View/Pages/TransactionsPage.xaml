@@ -50,7 +50,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <ContentControl>
-                                    <Button x:Name="deleteExpenseBtn"  Content="Delete" Click="deleteExpenseBtn_Click" Background="Red" Foreground="White"/>
+                                    <Button x:Name="deleteExpenseBtn"  Content="Delete" Click="deleteExpenseBtn_Click" CommandParameter="{Binding}" Background="Red" Foreground="White"/>
                                 </ContentControl>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
