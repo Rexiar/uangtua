@@ -75,9 +75,8 @@ namespace MainProgram.Service
             }
         }
 
-        public static List<Transaction> GetTransactions(bool full = false, string type = null)
+        public static List<Transaction> GetTransactions(int userID, bool full = false, string type = null)
         {
-            int userID = AuthService.loggedInId;
             DBConnection dbConnection = new DBConnection();
             List<Transaction> transactions = new List<Transaction>();
             string query = "SELECT * FROM Transactions";
@@ -144,18 +143,19 @@ namespace MainProgram.Service
             return transactions;
         }
 
-        public Dictionary<string, double> GetByCategoriesDistributions(string type)
+        public Dictionary<string, double> GetByCategoriesDistributions(string type, int userID)
         {
             Dictionary<string, double> categoriesDistributions = new Dictionary<string, double>();
             DBConnection dbConnection = new DBConnection();
             string query = "SELECT c.Title, SUM(t.Amount) AS TotalAmount FROM Transactions t JOIN " +
-                            "Categories c ON t.CategoryID = c.CategoryID WHERE c.Type = @type GROUP BY c.Title";
+                            "Categories c ON t.CategoryID = c.CategoryID WHERE c.Type = @type AND t.UserID = @userID GROUP BY c.Title";
             using (NpgsqlConnection connection = dbConnection.GetConnection())
             {
                 connection.Open();
 
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@userID", userID);
                     command.Parameters.AddWithValue("@type", type);
                     using (NpgsqlDataReader reader = command.ExecuteReader())
                     {

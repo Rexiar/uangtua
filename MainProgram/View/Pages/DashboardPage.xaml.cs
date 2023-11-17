@@ -45,8 +45,9 @@ namespace MainProgram.View.Pages
 
             updateDashboard();
             DisplayPieChart();
-            var incomeData = TransactionService.GetTransactions(true, "Income");
-            var expenseData = TransactionService.GetTransactions(true, "Expense");
+            int userID = loggedInUser.UserID;
+            var incomeData = TransactionService.GetTransactions(userID, true, "Income");
+            var expenseData = TransactionService.GetTransactions(userID, true, "Expense");
 
             DataContext = this;
             ChartValues<double> values = new ChartValues<double>();
@@ -104,10 +105,11 @@ namespace MainProgram.View.Pages
         public Func<ChartPoint, string> PointLabel { get; set; }
         private void updateDashboard()
         {
+            int userID = loggedInUser.UserID;
             int incomeAmount = 0;
             int expenseAmount = 0;
-            List<Transaction> incomes = TransactionService.GetTransactions(true, "Income");
-            List<Transaction> expenses = TransactionService.GetTransactions(true, "Expense");
+            List<Transaction> incomes = TransactionService.GetTransactions(userID, true, "Income");
+            List<Transaction> expenses = TransactionService.GetTransactions(userID, true, "Expense");
             for (int i = 0; i < incomes.Count; i++)
             {
                 incomeAmount += incomes[i].Amount;
@@ -124,8 +126,9 @@ namespace MainProgram.View.Pages
         private void DisplayPieChart()
         {
             TransactionService transactionService = new TransactionService();
-            Dictionary<string, double> expenseData = transactionService.GetByCategoriesDistributions("Expense");
-            Dictionary<string, double> incomeData = transactionService.GetByCategoriesDistributions("Income");
+            int userID = loggedInUser.UserID;
+            Dictionary<string, double> expenseData = transactionService.GetByCategoriesDistributions("Expense", userID);
+            Dictionary<string, double> incomeData = transactionService.GetByCategoriesDistributions("Income", userID);
 
             SeriesCollection expenseDistributions = new SeriesCollection();
             SeriesCollection incomeDistributions = new SeriesCollection();
