@@ -72,10 +72,11 @@ namespace MainProgram.View.Pages
         {
             int amount = int.Parse(amountInput.Text);
             string note = noteInput.Text;
+            int userID = loggedInUser.UserID;
             string transactionCategory = categoryInput.SelectedItem?.ToString();
             Category selectedCategory = allCategories.FirstOrDefault(cat => cat.Title == transactionCategory);
             int transactionCategoryID = selectedCategory.CategoryID;
-            int userID = AuthService.loggedInId;
+            MessageBox.Show($"User ID: {userID}");
 
             Transaction newTransaction = new Transaction(transactionCategoryID, amount, note, userID);
 
@@ -95,8 +96,9 @@ namespace MainProgram.View.Pages
 
         private void loadExpensesAndIncomes()
         {
-            List<Transaction> incomes = TransactionService.GetTransactions(false, "Income");
-            List<Transaction> expenses = TransactionService.GetTransactions(false, "Expense");
+            int userID = loggedInUser.UserID;
+            List<Transaction> incomes = TransactionService.GetTransactions(userID, false, "Income");
+            List<Transaction> expenses = TransactionService.GetTransactions(userID, false, "Expense");
 
             expensesDataGrid.ItemsSource = incomes;
             incomesDataGrid.ItemsSource = expenses;
@@ -115,7 +117,7 @@ namespace MainProgram.View.Pages
 
         private void updateIncomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Failed to delete the income transaction.");
+            MessageBox.Show("Failed to update the income transaction.");
         }
     }
 }

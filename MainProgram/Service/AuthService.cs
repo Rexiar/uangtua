@@ -55,9 +55,11 @@ namespace MainProgram.Service
                                 email: reader["Email"].ToString(),
                                 contacts: reader["Contacts"].ToString(),
                                 password: reader["Password"].ToString()
-                            );
+                            )
+                            {
+                                UserID = Convert.ToInt32(reader["UserID"])
+                            };
 
-                            loggedInId = user.UserID; 
                             return user;
                         }
                         else
