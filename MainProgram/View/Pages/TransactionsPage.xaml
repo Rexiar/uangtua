@@ -12,7 +12,7 @@
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Background="White"/>
         <Grid>
             <Label Content="Transactions" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
-            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="26,47,429,30" Background="#FFD0EAD0">
+            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="26,47,429,30" Background="#FFFFDB57">
                 <Grid>
                     <Label Content="Name" HorizontalAlignment="Left" Margin="38,2,0,0" VerticalAlignment="Top" FontSize="10
                     " Foreground="#FF565050"/>

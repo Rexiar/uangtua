@@ -154,7 +154,7 @@
         </Style>
     </Window.Resources>
     <Grid x:Name="registerForm">
-            <Image Source="/Assert/8432.jpg" Margin="43,144,552,68" Stretch="Fill" RenderTransformOrigin="0.200,0.200" Grid.RowSpan="2"/>
+            <Image Source="/Assert/8432.jpg" Margin="43,144,552,68" Stretch="Fill" RenderTransformOrigin="0.200,0.200" Grid.RowSpan="2" Width="472"/>
             <Rectangle Fill="#FFFFDB57" RadiusX="10" RadiusY="10"  StrokeThickness="2" Margin="500,0,0,0"/>
         <Label x:Name="RegisterLabel" Content="SIGNUP" HorizontalAlignment="Left" Margin="705,62,0,0" VerticalAlignment="Top" Width="90" FontSize="20" FontWeight="Bold" FontFamily="Poppins" RenderTransformOrigin="5.859,0.555"/>
         <Label Content="Username" HorizontalAlignment="Left" Margin="627,127,0,0" VerticalAlignment="Top" FontSize="10               " Foreground="#FF565050"/>
@@ -165,7 +165,7 @@
         <TextBox x:Name="passwordInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Left" Margin="627,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFFFDB57" Padding="5" TextChanged="passwordInput_TextChanged" BorderBrush="#FF00509D"/>
         <Label Content="Phone Number" HorizontalAlignment="Left" Margin="627,289,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050"/>
         <TextBox x:Name="contactsInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Left" Margin="627,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFFFDB57" Padding="5" TextChanged="passwordInput_TextChanged" BorderBrush="#FF00509D"/>
-        <Button x:Name="registerBtn" Style="{DynamicResource RoundedButtonStyle}" Content="Sign Up" HorizontalAlignment="Left" Margin="710,363,0,0" VerticalAlignment="Top" Width="112" Padding="5" Foreground="White" Background="#FF00509D" Click="registerBtn_Click"/>
+        <Button x:Name="registerBtn" Style="{DynamicResource RoundedButtonStyle}" Content="Sign Up" HorizontalAlignment="Left" Margin="710,363,0,0" VerticalAlignment="Top" Width="112" Height="30" Padding="5" Foreground="White" Background="#FF00509D" Click="registerBtn_Click"/>
         <Label Content="Already have an account?" HorizontalAlignment="Left" Margin="676,393,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF7F7575"/>
         <Label x:Name="redirectToLoginBtn" Content="Log In" HorizontalAlignment="Left" Margin="799,393,0,0" VerticalAlignment="Top" FontSize="10" FontWeight="SemiBold" Foreground="#00509D" MouseLeftButtonDown="loginRedirect_MouseLeftButtonDown" RenderTransformOrigin="13.158,2.73"/>
         <Label x:Name="RegisterLabel_Copy" Content="&quot;With 'AduAja,' you can control and manage&#xD;&#xA; your income and expenses efficiently.&quot;" HorizontalAlignment="Left" Margin="29,85,0,0" VerticalAlignment="Top" Width="434" FontSize="20" FontWeight="Bold" FontFamily="Poppins" RenderTransformOrigin="5.859,0.555"/>

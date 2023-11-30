@@ -11,22 +11,20 @@
     <Grid>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Background="White"/>
 
-        <Label Content="Dashboard" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="24,67,201,28" Background="#FFD0EAD0">
-        </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,84,510,270" Background="White" >
+        <Label Content="Dashboard" HorizontalAlignment="Left" Margin="50,30,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,84,510,270" Background="#FF00509D" >
             <Grid>
-                <Label x:Name="incomeLabel" Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="120,49,0,0"/>
-                <Label Content="INCOME" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="7,10,0,0" FontSize="18"/>
+                <Label x:Name="incomeLabel" Content="Rp 1,925.21" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="0,48,0,0" Foreground="White"/>
+                <Label Content="INCOME" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Foreground="White" Margin="10,11,0,0"/>
             </Grid>
         </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="312,84,240,270" Background="White" >
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="312,84,240,270" Background="#FF00509D" >
             <Grid>
-                <Label x:Name="expenseLabel" Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="110,49,0,0"/>
-                <Label Content="EXPENSE" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="7,10,0,0" FontSize="18"/>
+                <Label x:Name="expenseLabel" Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="67,54,0,0" Foreground="White"/>
+                <Label Content="EXPENSE" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,10,0,0" FontSize="18" Foreground="White"/>
             </Grid>
         </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,203,240,62" Background="White" RenderTransformOrigin="0.5,0.5" >
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,204,240,40" Background="#FFEDEDED" RenderTransformOrigin="0.5,0.5" >
             <Label Content="Total Savings" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,10,0,0" FontSize="20"/>
         </Border>
 

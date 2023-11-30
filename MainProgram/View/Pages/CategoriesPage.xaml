@@ -10,7 +10,7 @@
 
     <Grid>
         <Border BorderThickness="0" CornerRadius="10" BorderBrush="Black" Background="White">
-            <DataGrid x:Name="DatagridCategory" HorizontalAlignment="Left" Height="330" Margin="442,81,0,0" VerticalAlignment="Top" Width="318" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid x:Name="DatagridCategory" HorizontalAlignment="Left" Height="155" Margin="55,254,0,0" VerticalAlignment="Top" Width="669" SelectionChanged="DataGrid_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Income" Binding="{Binding Income}" Width="*">
                         <DataGridTextColumn.HeaderStyle>
@@ -32,21 +32,21 @@
         <Grid/>
         <Grid/>
         <Label Content="Categories" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="24,84,441,28" Background="#FFD0EAD0">
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="53,83,53,215" Background="#FFFFDB57">
         </Border>
         <Grid>
             <Grid>
-                <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="60,128,0,0" TextWrapping="Wrap" Text="Enter the category name" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
-                <Label Content="Name" HorizontalAlignment="Left" Margin="60,105,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="10" Foreground="#FF565050"/>
+                <TextBox x:Name="nameInput" HorizontalAlignment="Left" Margin="92,141,0,0" TextWrapping="Wrap" Text="Enter the category name" VerticalAlignment="Top" Width="252" Height="28" Background="#FFFFDB57" Padding="5" BorderBrush="#FF00509D"/>
+                <Label Content="Name" HorizontalAlignment="Left" Margin="92,110,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Foreground="#FF565050"/>
             </Grid>
             <Grid>
-                <Label Content="Type" HorizontalAlignment="Left" Margin="60,172,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="10" Foreground="#FF565050"/>
-                <ComboBox x:Name="typeInput" Margin="60,200,488,220">
+                <Label Content="Type" HorizontalAlignment="Left" Margin="400,110,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Foreground="#FF565050" RenderTransformOrigin="0.569,0.77"/>
+                <ComboBox x:Name="typeInput" Margin="400,141,148,270">
                     <ComboBoxItem Content="Income"/>
                     <ComboBoxItem Content="Expense"/>
                 </ComboBox>
             </Grid>
-            <Button x:Name="addCategoryBtn" Content="Add Category" HorizontalAlignment="Left"  Margin="60,312,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326" Click="addCategoryBtn_Click" />
+            <Button x:Name="addCategoryBtn" Content="Add Category" HorizontalAlignment="Left"  Margin="576,184,0,0" VerticalAlignment="Top" Width="112" Height="30" Padding="5" Foreground="White" Background="#FF00509D" Click="addCategoryBtn_Click" />
         </Grid>
     </Grid>
 </Page>
