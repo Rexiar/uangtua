@@ -10,26 +10,41 @@
 
     <Grid>
         <Border BorderThickness="0" CornerRadius="10" BorderBrush="Black" Background="White">
+<<<<<<< HEAD
             <DataGrid x:Name="DatagridCategory" HorizontalAlignment="Left" Height="155" Margin="55,254,0,0" VerticalAlignment="Top" Width="669" SelectionChanged="DataGrid_SelectionChanged">
+=======
+        </Border>
+        <Grid>
+            <DataGrid x:Name="categoriesByExpenseDataGrid" HorizontalAlignment="Left" Height="342" Margin="439,83,0,0" VerticalAlignment="Top" Width="163" SelectionChanged="DataGrid_SelectionChanged" FontFamily="Montserrat" FontSize="14" AutoGenerateColumns="False">
+>>>>>>> 1e0e8680803280855de5a642b487ff19350bf12f
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Income" Binding="{Binding Income}" Width="*">
+                    <DataGridTextColumn Header="Expense" Binding="{Binding Title}" Width="*">
                         <DataGridTextColumn.HeaderStyle>
                             <Style TargetType="DataGridColumnHeader">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />
-                            </Style>
-                        </DataGridTextColumn.HeaderStyle>
-                    </DataGridTextColumn>
-                    <DataGridTextColumn Header="Expense" Binding="{Binding Expense}" Width="*">
-                        <DataGridTextColumn.HeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Background" Value="Green" />
+                                <Setter Property="Height" Value="50" />
                             </Style>
                         </DataGridTextColumn.HeaderStyle>
                     </DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
-        </Border>
-        <Grid/>
+            <DataGrid x:Name="categoriesByIncomeDataGrid" HorizontalAlignment="Left" Height="342" Margin="602,83,0,0" VerticalAlignment="Top" Width="163" SelectionChanged="DataGrid_SelectionChanged" FontFamily="Montserrat" FontSize="14" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Income" Binding="{Binding Title}" Width="*">
+                        <DataGridTextColumn.HeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Background" Value="Green" />
+                                <Setter Property="Height" Value="50" />
+                            </Style>
+                        </DataGridTextColumn.HeaderStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
         <Grid/>
         <Label Content="Categories" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="53,83,53,215" Background="#FFFFDB57">

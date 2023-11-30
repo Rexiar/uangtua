@@ -23,9 +23,12 @@ namespace MainProgram.View.Pages
     public partial class TransactionsPage : Page
     {
         private List<Category> allCategories;
-        public TransactionsPage()
+        private User loggedInUser;
+        public TransactionsPage(User user)
         {
             InitializeComponent();
+            loggedInUser = user;
+
             allCategories = CategoryServices.GetCategories();
             UpdateCategoryInputCB();
             loadExpensesAndIncomes();
@@ -69,18 +72,20 @@ namespace MainProgram.View.Pages
         {
             int amount = int.Parse(amountInput.Text);
             string note = noteInput.Text;
+            int userID = loggedInUser.UserID;
             string transactionCategory = categoryInput.SelectedItem?.ToString();
             Category selectedCategory = allCategories.FirstOrDefault(cat => cat.Title == transactionCategory);
             int transactionCategoryID = selectedCategory.CategoryID;
-            int userID = AuthService.loggedInId;
+            //MessageBox.Show($"User ID: {userID}");
 
-            Transaction newTransaction = new Transaction(transactionCategoryID, amount, note, userID);
+            Transaction newTransaction = new Transaction(transactionCategoryID, amount, note, userID, DateTime.Now);
 
             bool isCreated = TransactionService.AddTransaction(newTransaction);
 
             if (isCreated)
             {
                 MessageBox.Show("New Transaction has been created");
+                loadExpensesAndIncomes();
             }
             else
             {
@@ -91,11 +96,41 @@ namespace MainProgram.View.Pages
 
         private void loadExpensesAndIncomes()
         {
-            List<Transaction> incomes = TransactionService.GetTransactions(false, "Income");
-            List<Transaction> expenses = TransactionService.GetTransactions(false, "Expense");
+            int userID = loggedInUser.UserID;
+            List<Transaction> incomes = TransactionService.GetTransactions(userID, false, "Income");
+            List<Transaction> expenses = TransactionService.GetTransactions(userID, false, "Expense");
 
             expensesDataGrid.ItemsSource = incomes;
             incomesDataGrid.ItemsSource = expenses;
+        }
+
+        private void deleteExpenseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn.DataContext is Transaction item)
+            {
+                string note = item.TransactionID.ToString();
+                System.Diagnostics.Debug.WriteLine(note);
+                TransactionService.DeleteTransaction(item.TransactionID);
+            }
+            loadExpensesAndIncomes();
+        }
+
+        private void deleteIncomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if (btn.DataContext is Transaction item)
+            {
+                string note = item.TransactionID.ToString();
+                System.Diagnostics.Debug.WriteLine(note);
+                TransactionService.DeleteTransaction(item.TransactionID);
+            }
+            loadExpensesAndIncomes();
+        }
+
+        private void updateIncomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            loadExpensesAndIncomes();
         }
     }
 }

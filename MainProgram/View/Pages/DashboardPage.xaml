@@ -14,13 +14,13 @@
         <Label Content="Dashboard" HorizontalAlignment="Left" Margin="50,30,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,84,510,270" Background="#FF00509D" >
             <Grid>
-                <Label x:Name="incomeLabel" Content="Rp 1,925.21" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="0,48,0,0" Foreground="White"/>
+                <Label x:Name="incomeLabel" Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="120,54,0,0" Foreground="White"/>
                 <Label Content="INCOME" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Foreground="White" Margin="10,11,0,0"/>
             </Grid>
         </Border>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="312,84,240,270" Background="#FF00509D" >
             <Grid>
-                <Label x:Name="expenseLabel" Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="67,54,0,0" Foreground="White"/>
+                <Label x:Name="expenseLabel" Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="124,54,0,0" Foreground="White"/>
                 <Label Content="EXPENSE" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,10,0,0" FontSize="18" Foreground="White"/>
             </Grid>
         </Border>

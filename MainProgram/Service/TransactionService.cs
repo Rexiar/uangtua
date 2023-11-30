@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -74,9 +75,8 @@ namespace MainProgram.Service
             }
         }
 
-        public static List<Transaction> GetTransactions(bool full = false, string type = null)
+        public static List<Transaction> GetTransactions(int userID, bool full = false, string type = null)
         {
-            int userID = AuthService.loggedInId;
             DBConnection dbConnection = new DBConnection();
             List<Transaction> transactions = new List<Transaction>();
             string query = "SELECT * FROM Transactions";
@@ -102,6 +102,7 @@ namespace MainProgram.Service
                 connection.Open();
                 using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@userID", userID);
                     if (!string.IsNullOrEmpty(type))
                     {
                         command.Parameters.AddWithValue("@type", type);
@@ -113,7 +114,9 @@ namespace MainProgram.Service
                                     categoryID: Convert.ToInt32(reader["CategoryID"]),
                                     amount: Convert.ToInt32(reader["Amount"]),
                                     note: reader["Note"].ToString(),
-                                    userID: Convert.ToInt32(reader["UserID"])
+                                    userID: Convert.ToInt32(reader["UserID"]),
+                                    date: Convert.ToDateTime(reader["date"]),
+                                    transactionid: Convert.ToInt32(reader["TransactionID"])
                                 );
                                 transactions.Add(transaction);
                             }
@@ -130,7 +133,9 @@ namespace MainProgram.Service
                                     amount: Convert.ToInt32(reader["Amount"]),
                                     note: reader["Note"].ToString(),
                                     userID: Convert.ToInt32(reader["UserID"]),
-                                    categoryType: reader["Title"].ToString()
+                                    categoryType: reader["Title"].ToString(),
+                                    date: Convert.ToDateTime(reader["date"]),
+                                    transactionid: Convert.ToInt32(reader["TransactionID"])
                                 );
                                 transactions.Add(transaction);
                             }
@@ -140,6 +145,36 @@ namespace MainProgram.Service
             }
 
             return transactions;
+        }
+
+        public Dictionary<string, double> GetByCategoriesDistributions(string type, int userID)
+        {
+            Dictionary<string, double> categoriesDistributions = new Dictionary<string, double>();
+            DBConnection dbConnection = new DBConnection();
+            string query = "SELECT c.Title, SUM(t.Amount) AS TotalAmount FROM Transactions t JOIN " +
+                            "Categories c ON t.CategoryID = c.CategoryID WHERE c.Type = @type AND t.UserID = @userID GROUP BY c.Title";
+            using (NpgsqlConnection connection = dbConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@userID", userID);
+                    command.Parameters.AddWithValue("@type", type);
+                    using (NpgsqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string categoryTitle = reader["Title"].ToString();
+                            double totalAmount = Convert.ToDouble(reader["TotalAmount"]);
+
+                            categoriesDistributions.Add(categoryTitle, totalAmount);
+                        }
+                    }
+                }
+            }
+
+            return categoriesDistributions;
         }
     }
 }

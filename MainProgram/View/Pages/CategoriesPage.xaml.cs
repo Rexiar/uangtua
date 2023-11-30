@@ -25,10 +25,13 @@ namespace MainProgram.View.Pages
     public partial class CategoriesPage : Page
     {
         private List<Category> allCategories;
-        public CategoriesPage()
+        private User loggedInUser;
+
+        public CategoriesPage(User user)
         {
             InitializeComponent();
             allCategories = CategoryServices.GetCategories();
+            loggedInUser = user;
             loadCategories();
         }
 
@@ -47,6 +50,7 @@ namespace MainProgram.View.Pages
                 if (isCreated)
                 {
                     MessageBox.Show("New Category has been created");
+                    loadCategories();
                 }
                 else
                 {
@@ -55,24 +59,13 @@ namespace MainProgram.View.Pages
             }
         }
 
-         private void loadCategories()
+        private void loadCategories()
         {
             List<Category> expenseCategories = CategoryServices.GetCategories("Expense");
             List<Category> incomeCategories = CategoryServices.GetCategories("Income");
-            if (typeInput.SelectedItem is ComboBoxItem selectedTypeItem)
-            {
-                string categoryType = selectedTypeItem.Content.ToString();
-                Enum.TryParse<Category.TransactionType>(categoryType, out Category.TransactionType transactionType);
 
-                if (transactionType == Category.TransactionType.Income)
-                {
-                    DatagridCategory.ItemsSource = incomeCategories;
-                }
-                else if (transactionType == Category.TransactionType.Expense)
-                {
-                    DatagridCategory.ItemsSource = expenseCategories;
-                }
-            }
+            categoriesByExpenseDataGrid.ItemsSource = expenseCategories;
+            categoriesByIncomeDataGrid.ItemsSource = incomeCategories;
         }
 
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)

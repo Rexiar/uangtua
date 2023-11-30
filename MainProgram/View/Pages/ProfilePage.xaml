@@ -9,6 +9,14 @@
       Title="ProfilePage">
 
     <Grid>
-        
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Background="White">
+        </Border>
+        <Label Content="User Profile" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
+        <Label Content="Username    :" Margin="50,120,0,0" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold" Foreground="Green"/>
+        <Label Content="Email             :" Margin="50,200,0,0" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold" Foreground="Green"/>
+        <Label Content="Contacts       :" Margin="50,280,0,0" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold" Foreground="Green"/>
+        <TextBlock x:Name="usernameLabel" HorizontalAlignment="Left" Margin="200,115,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="White" Background="Green" Padding="10" Width="200"/>
+        <TextBlock x:Name="emailLabel" HorizontalAlignment="Left" Margin="200,195,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="White" Background="Green" Padding="10" Width="200"/>
+        <TextBlock x:Name="contactsLabel" HorizontalAlignment="Left" Margin="200,275,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="White" Background="Green" Padding="10" Width="200"/>
     </Grid>
 </Page>

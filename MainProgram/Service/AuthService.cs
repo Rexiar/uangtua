@@ -31,25 +31,41 @@ namespace MainProgram.Service
                 }
             }
         }
-        public static bool LoginUser(string username, string password) 
-        { 
+        public static User LoginUser(string username, string password)
+        {
             DBConnection dbConnection = new DBConnection();
             string query = "SELECT * FROM Users WHERE Username=@username AND Password=@password";
+
             using (NpgsqlConnection connection = dbConnection.GetConnection())
             {
                 connection.Open();
-                using (NpgsqlCommand command = new NpgsqlCommand(query,connection))
+
+                using (NpgsqlCommand command = new NpgsqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@username", username);
                     command.Parameters.AddWithValue("@password", password);
-                    command.ExecuteNonQuery ();
+                    command.ExecuteNonQuery();
+
                     using (NpgsqlDataReader reader = command.ExecuteReader())
                     {
-                        while (reader.Read())
+                        if (reader.Read())
                         {
-                            loggedInId = (int)Convert.ToInt32(reader["UserID"]);
+                            User user = new User(
+                                username: reader["Username"].ToString(),
+                                email: reader["Email"].ToString(),
+                                contacts: reader["Contacts"].ToString(),
+                                password: reader["Password"].ToString()
+                            )
+                            {
+                                UserID = Convert.ToInt32(reader["UserID"])
+                            };
+
+                            return user;
                         }
-                        return (loggedInId != 0);
+                        else
+                        {
+                            return null; 
+                        }
                     }
                 }
             }

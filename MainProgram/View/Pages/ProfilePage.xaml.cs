@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProgram.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,14 @@ namespace MainProgram.View.Pages
     /// </summary>
     public partial class ProfilePage : Page
     {
-        public ProfilePage()
+        private User loggedInUser;
+        public ProfilePage(User user)
         {
             InitializeComponent();
+            loggedInUser = user;
+            usernameLabel.Text = $"{loggedInUser.Username}";
+            emailLabel.Text = $"{loggedInUser.Email}";
+            contactsLabel.Text = $"{loggedInUser.Contacts}";
         }
     }
 }

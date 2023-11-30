@@ -8,8 +8,7 @@ namespace MainProgram.Model
 {
     public class UserBase
     {
-        public int UserID;
-
+        public int UserID { get; set; }
         public string Username { get; set; }
         public string Email { get; set; }
         public string Contacts { get; set; }
