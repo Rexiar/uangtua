@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:MainProgram"
              StartupUri="View/MainMenu.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="6573" UriSource="assert\6573.jpg"></BitmapImage>
+            <BitmapImage x:Key="8432" UriSource="assert\8432.jpg"></BitmapImage>
+        </ResourceDictionary>
          
     </Application.Resources>
 </Application>

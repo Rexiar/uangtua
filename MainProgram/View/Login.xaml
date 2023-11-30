@@ -153,18 +153,24 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Rectangle Fill="#FFFFDB57" RadiusX="10" RadiusY="10"  StrokeThickness="2" Margin="500,0,0,0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="151*"/>
+            <RowDefinition Height="333*"/>
+        </Grid.RowDefinitions>
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label Content="Email or Username" HorizontalAlignment="Left" Margin="630,132,0,0" FontWeight="SemiBold" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050"/>
-        <TextBox x:Name="usernameInput" Style="{DynamicResource RoundedTextStyle1}" HorizontalAlignment="Left" Margin="634,156,0,0" TextWrapping="Wrap" Text="Enter your username or email" VerticalAlignment="Top" Width="252" Height="28" Background="#FFFFDB57" Padding="5" IsKeyboardFocusedChanged="usernameInput_IsKeyboardFocusedChanged" BorderBrush="#FF00509D"/>
-        <TextBox x:Name="passwordInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Left" Margin="634,211,0,0" TextWrapping="Wrap" Text="Enter your password" VerticalAlignment="Top" Width="252" Height="29" Background="#FFFFDB57" Padding="5" IsKeyboardFocusedChanged="passwordInput_IsKeyboardFocusedChanged" BorderBrush="#FF00509D"/>
-        <Label Content="Password" HorizontalAlignment="Left" FontWeight="SemiBold"  Margin="630,188,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050"/>
-        <Button x:Name="loginBtn" Style="{DynamicResource RoundedButtonStyle}" Content="Login" HorizontalAlignment="Left" Margin="702,282,0,0" VerticalAlignment="Top" Width="112" Padding="5" Foreground="White" Background="#FF00509D" Click="loginBtn_Click"/>
-        <Label Content="Do not have an account?" HorizontalAlignment="Left" Margin="672,312,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF7F7575"/>
-        <Label x:Name="signUpLabel" Content="Sign Up" HorizontalAlignment="Left" Margin="792,312,0,0" FontWeight="Bold" VerticalAlignment="Top" FontSize="10" Foreground="#00509D" MouseLeftButtonDown="signUpLabel_MouseLeftButtonDown"/>
-        <Image Margin="43,144,552,68" Source="/Assert/6573.jpg" Stretch="Fill" RenderTransformOrigin="0.523,0.589"/>
-        <Label x:Name="RegisterLabel" Content="LOGIN" HorizontalAlignment="Left" Margin="707,65,0,0" VerticalAlignment="Top" Width="90" FontSize="20" FontWeight="Bold" FontFamily="Poppins" RenderTransformOrigin="5.859,0.555"/>
+        <Image Margin="43,144,552,68" Source="/Assert/6573.jpg" Stretch="Fill" RenderTransformOrigin="0.523,0.589" Grid.RowSpan="2"/>
+        <Rectangle Fill="#FFFFDB57" RadiusX="10" RadiusY="10"  StrokeThickness="2" Margin="506,0,0,2" Grid.RowSpan="2"/>
+        <Label Content="Email or Username" HorizontalAlignment="Left" Margin="632,137,0,0" FontWeight="SemiBold" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050" RenderTransformOrigin="0.714,0.173" Height="23" Width="94" Grid.RowSpan="2"/>
+        <TextBox x:Name="usernameInput" Style="{DynamicResource RoundedTextStyle1}" HorizontalAlignment="Left" Margin="632,11,0,0" TextWrapping="Wrap" Text="Enter your username or email" VerticalAlignment="Top" Width="252" Height="28" Background="#FFFFDB57" Padding="5" IsKeyboardFocusedChanged="usernameInput_IsKeyboardFocusedChanged" BorderBrush="#FF00509D" Grid.Row="1"/>
+        <TextBox x:Name="passwordInput" Style="{DynamicResource RoundedTextStyle2}" HorizontalAlignment="Left" Margin="632,66,0,0" TextWrapping="Wrap" Text="Enter your password" VerticalAlignment="Top" Width="252" Height="29" Background="#FFFFDB57" Padding="5" IsKeyboardFocusedChanged="passwordInput_IsKeyboardFocusedChanged" BorderBrush="#FF00509D" Grid.Row="1"/>
+        <Label Content="Password" HorizontalAlignment="Left" FontWeight="SemiBold"  Margin="628,43,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050" Grid.Row="1" Height="23" Width="52"/>
+        <Button x:Name="loginBtn" Style="{DynamicResource RoundedButtonStyle}" Content="Login" HorizontalAlignment="Left" Margin="700,137,0,0" VerticalAlignment="Top" Width="112" Padding="5" Foreground="White" Background="#FF00509D" Click="loginBtn_Click" Grid.Row="1" Height="26"/>
+        <Label Content="Do not have an account?" HorizontalAlignment="Left" Margin="670,167,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF7F7575" Grid.Row="1" Height="23" Width="120"/>
+        <Label x:Name="signUpLabel" Content="Sign Up" HorizontalAlignment="Left" Margin="790,167,0,0" FontWeight="Bold" VerticalAlignment="Top" FontSize="10" Foreground="#00509D" MouseLeftButtonDown="signUpLabel_MouseLeftButtonDown" Grid.Row="1" Height="23" Width="46"/>
+        <Label x:Name="RegisterLabel" Content="LOGIN" HorizontalAlignment="Left" Margin="709,76,0,0" VerticalAlignment="Top" Width="90" FontSize="20" FontWeight="Bold" FontFamily="Poppins" RenderTransformOrigin="5.859,0.555" Height="34"/>
+        <Label x:Name="RegisterLabel_Copy" Content="&quot;Manage your money for a better future.&quot;" HorizontalAlignment="Left" Margin="43,93,0,0" VerticalAlignment="Top" Width="418" FontSize="20" FontWeight="Bold" FontFamily="Poppins" RenderTransformOrigin="5.859,0.555" Height="34"/>
     </Grid>
 </Window>
