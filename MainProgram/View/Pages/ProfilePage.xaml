@@ -16,8 +16,8 @@
         <Label Content="Username    :" Margin="200,143,-150,-23" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold" Foreground="Black"/>
         <Label Content="Email             :" Margin="200,207,-150,-7" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold" Foreground="Black"/>
         <Label Content="Contacts       :" Margin="200,261,-150,19" FontFamily="Montserrat" FontSize="18" FontWeight="DemiBold" Foreground="Black"/>
-        <TextBlock x:Name="usernameLabel" HorizontalAlignment="Left" Margin="375,143,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="#FF00509D" Background="#EDEDED" Padding="10" Width="200"/>
-        <TextBlock x:Name="emailLabel" HorizontalAlignment="Left" Margin="375,207,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="#FF00509D" Background="#EDEDED" Padding="10" Width="200"/>
-        <TextBlock x:Name="contactsLabel" HorizontalAlignment="Left" Margin="375,266,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="#FF00509D" Background="#EDEDED" Padding="10" Width="200" RenderTransformOrigin="1.948,-0.04"/>
+        <TextBlock x:Name="usernameLabel" HorizontalAlignment="Left" Margin="375,143,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="#FF00509D" Background="#EDEDED" Padding="10" Width="200" Height="32"/>
+        <TextBlock x:Name="emailLabel" HorizontalAlignment="Left" Margin="375,0,0,0" VerticalAlignment="Center" FontFamily="Montserrat" FontSize="18" Foreground="#FF00509D" Background="#EDEDED" Padding="10" Width="200" Height="32"/>
+        <TextBlock x:Name="contactsLabel" HorizontalAlignment="Left" Margin="375,266,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="#FF00509D" Background="#EDEDED" Padding="10" Width="200" RenderTransformOrigin="1.948,-0.04" Height="32"/>
     </Grid>
 </Page>
