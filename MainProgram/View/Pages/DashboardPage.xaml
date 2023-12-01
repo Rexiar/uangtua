@@ -11,27 +11,29 @@
 
     <Grid>
         <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Background="White"/>
-        <TextBlock x:Name="welcomeLabel" HorizontalAlignment="Left" Margin="24,0,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="18" Foreground="Green"/>
-        <Label Content="Dashboard" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="24,67,201,28" Background="#FFD0EAD0">
+        <Label Content="Hello, " HorizontalAlignment="Left" Margin="378,34,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" Height="38" Width="180"/>
+        <TextBlock x:Name="welcomeLabel" HorizontalAlignment="Left" Margin="450,35,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="24" Foreground="#FF00509D" FontWeight="ExtraBold"/>
+        <Label Content="Dashboard" HorizontalAlignment="Left" Margin="34,34,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="38" Width="180"/>
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="34,77,201,28" Background="#FFFFDB57">
         </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,84,510,270" Background="White" >
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="69,101,491,253" Background="White" >
             <Grid>
                 <Label x:Name="incomeLabel" Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="120,49,0,0"/>
-                <Label Content="INCOME" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="7,10,0,0" FontSize="18"/>
+                <Label Content="INCOME" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,16,0,0" FontSize="18"/>
+                <Label Content="⚫" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="278,10,0,0" FontSize="18"/>
             </Grid>
         </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="312,84,240,270" Background="White" >
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="324,101,228,253" Background="White" >
             <Grid>
                 <Label x:Name="expenseLabel" Content="Rp 1,925.21" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" FontSize="18" Margin="110,49,0,0"/>
-                <Label Content="EXPENSE" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="7,10,0,0" FontSize="18"/>
+                <Label Content="EXPENSE" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,16,0,0" FontSize="18"/>
             </Grid>
         </Border>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="50,203,240,62" Background="White" RenderTransformOrigin="0.5,0.5" >
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="62,215,228,40" Background="White" RenderTransformOrigin="0.5,0.5" >
             <Label Content="Total Savings" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="10,-1,0,0" FontSize="20"/>
 
         </Border>
-        <lvc:CartesianChart x:Name="MyChart" Margin="34,213,240,42"/>
+        <lvc:CartesianChart x:Name="MyChart" Margin="46,235,228,20"/>
         <Grid>
             <Label Content="Income Chart" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Montserrat" FontWeight="Bold" Margin="619,25,0,0" FontSize="18"/>
             <lvc:PieChart x:Name="incomePieChart" LegendLocation="Bottom" Hoverable="False" DataTooltip="{x:Null}" Margin="628,63,42,225" Series="{Binding IncomeDistributions}">
@@ -42,6 +44,5 @@
             <lvc:PieChart x:Name="expensePieChart" LegendLocation="Bottom" Hoverable="False" DataTooltip="{x:Null}" Margin="628,271,42,17" Series="{Binding ExpenseDistributions}">
             </lvc:PieChart>
         </Grid>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="-47,62,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>

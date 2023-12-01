@@ -41,7 +41,7 @@ namespace MainProgram.View.Pages
         {
             InitializeComponent();
             loggedInUser = user;
-            welcomeLabel.Text = $"Welcome {loggedInUser.Username}";
+            welcomeLabel.Text = $"{loggedInUser.Username}";
 
             updateDashboard();
             DisplayPieChart();
