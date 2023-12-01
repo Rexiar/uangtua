@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="mainMenuWindow" Height="500" Width="1000">
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="484" Stroke="Black" VerticalAlignment="Center" RadiusX="30" RadiusY="30" Width="240" Fill="#11296B" RenderTransformOrigin="0.5,0.5" Margin="-40,0,0,0"></Rectangle>
-        <Label Content="Uang" HorizontalAlignment="Left" Margin="25,42,0,0" VerticalAlignment="Top" Foreground="#FFCB05" FontWeight="Bold" FontSize="20" FontFamily="Montserrat"/>
-        <Label Content="tua" HorizontalAlignment="Left" Margin="80,42,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Montserrat" Foreground="White"/>
+        <Rectangle HorizontalAlignment="Left" Height="484" Stroke="Black"  RadiusX="30" RadiusY="30" VerticalAlignment="Center" Width="251" Fill="#FF11296B" RenderTransformOrigin="0.5,0.5" Margin="-51,0,0,0">
+        </Rectangle>
+        <Label Content="Uang" HorizontalAlignment="Left" Margin="37,48,0,0" VerticalAlignment="Top" Foreground="#FFFFCB05" FontWeight="Bold" FontSize="20" FontFamily="Montserrat"/>
+        <Label Content="tua" HorizontalAlignment="Left" Margin="92,48,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Montserrat" Foreground="White"/>
         <Label Content="MANAGE" HorizontalAlignment="Left" Margin="21,106,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Montserrat"/>
         <Label Content="PREFERENCES" HorizontalAlignment="Left" Margin="21,330,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Montserrat"/>
         <Button x:Name="logoutBtn" Content="Log Out" BorderThickness="0" FontFamily="Montserrat" HorizontalAlignment="Left" Background="Transparent" Foreground="White" Margin="51,354,0,78" Click="logoutBtn_Click"/>

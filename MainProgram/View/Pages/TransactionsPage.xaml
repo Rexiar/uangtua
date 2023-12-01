@@ -9,53 +9,38 @@
       Title="TransactionsPage">
 
     <Grid>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Background="White"/>
+        <Border BorderThickness="0" CornerRadius="8" Background="White"/>
         <Grid>
             <Label Content="Transactions" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
-<<<<<<< HEAD
-            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="26,47,429,30" Background="#FFFFDB57">
+            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="26,52,429,30" Background="#FFEDEDED">
                 <Grid>
-                    <Label Content="Name" HorizontalAlignment="Left" Margin="38,2,0,0" VerticalAlignment="Top" FontSize="10
-                    " Foreground="#FF565050"/>
-                    <TextBox x:Name="transactionNameInput" HorizontalAlignment="Left" Margin="38,30,0,0" TextWrapping="Wrap" Text="Enter the transaction name" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
-                    <Label Content="Amount" HorizontalAlignment="Left" Margin="38,63,0,0" VerticalAlignment="Top" FontSize="10
+                    <Label Content="Amount" HorizontalAlignment="Left" Margin="38,27,0,0" VerticalAlignment="Top" FontSize="10
                         " Foreground="#FF565050"/>
-                    <TextBox x:Name="amountInput" HorizontalAlignment="Left" Margin="38,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
-                    <TextBox x:Name="noteInput" HorizontalAlignment="Left" Margin="38,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
-                    <Label Content="Type" HorizontalAlignment="Left" Margin="38,171,0,0" VerticalAlignment="Top" FontSize="10
+                    <TextBox x:Name="amountInput" HorizontalAlignment="Left" Margin="38,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFEDEDED" Padding="5" Foreground="#FFFFDB57" BorderBrush="#FFFFDB57"/>
+                    <TextBox x:Name="noteInput" HorizontalAlignment="Left" Margin="38,111,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFEDEDED" Padding="5" BorderBrush="#FFFFDB57"/>
+                    <Label Content="Type" HorizontalAlignment="Left" Margin="38,140,0,0" VerticalAlignment="Top" FontSize="10
                        " Foreground="#FF565050"/>
-                    <ComboBox x:Name="transactionTypeInput" Height="30" Margin="38,199,55,144" SelectionChanged="transactionTypeInput_SelectionChanged">
-=======
-            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="26,52,429,30" Background="#FFD0EAD0">
-                <Grid>
-                    <Label Content="Amount" HorizontalAlignment="Left" Margin="38,47,0,0" VerticalAlignment="Top" FontSize="10
-                        " Foreground="#FF565050"/>
-                    <TextBox x:Name="amountInput" HorizontalAlignment="Left" Margin="38,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
-                    <TextBox x:Name="noteInput" HorizontalAlignment="Left" Margin="38,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Height="28" Background="#FFD2EDD2" Padding="5"/>
-                    <Label Content="Type" HorizontalAlignment="Left" Margin="38,171,0,0" VerticalAlignment="Top" FontSize="10
-                       " Foreground="#FF565050"/>
-                    <ComboBox x:Name="transactionTypeInput" Height="30" Margin="38,199,55,144" SelectionChanged="transactionTypeInput_SelectionChanged">
->>>>>>> 1e0e8680803280855de5a642b487ff19350bf12f
+                    <ComboBox x:Name="transactionTypeInput" Height="30" Margin="38,168,55,170" SelectionChanged="transactionTypeInput_SelectionChanged" BorderBrush="#FFFFDB57">
                         <ComboBoxItem Content="Income"/>
                         <ComboBoxItem Content="Expense"/>
                     </ComboBox>
-                    <Label Content="Category" HorizontalAlignment="Left" Margin="38,237,0,0" VerticalAlignment="Top" FontSize="10
+                    <Label Content="Category" HorizontalAlignment="Left" Margin="38,198,0,0" VerticalAlignment="Top" FontSize="10
                         " Foreground="#FF565050"/>
-                    <ComboBox x:Name="categoryInput" Height="30" Margin="38,268,55,75" SelectionChanged="categoryInput_SelectionChanged">
-                    </ComboBox> 
-                    <Button x:Name="addTransactionBtn" Content="Add Transaction" HorizontalAlignment="Left" Margin="38,318,0,0" VerticalAlignment="Top" Width="252" Padding="5" Foreground="White" Background="#FF15B326" Click="addTransactionBtn_Click"/>
+                    <ComboBox x:Name="categoryInput" Height="30" Margin="38,229,55,109" SelectionChanged="categoryInput_SelectionChanged" BorderBrush="{x:Null}">
+                    </ComboBox>
+                    <Button x:Name="addTransactionBtn" Content="Add Transaction" HorizontalAlignment="Left" Margin="98,297,0,0" VerticalAlignment="Top" Width="132" Height="30" Padding="5" Foreground="White" Background="#FF00509D" Click="addTransactionBtn_Click"/>
                 </Grid>
             </Border>
         </Grid>
 
-        <Label Content="Note" HorizontalAlignment="Left" Margin="65,167,0,0" VerticalAlignment="Top" FontSize="10        " Foreground="#FF565050"/>
+        <Label Content="Note" HorizontalAlignment="Left" Margin="65,135,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FF565050" RenderTransformOrigin="0.49,-0.014"/>
         <Label Content="Label" HorizontalAlignment="Left" Margin="294,-31,0,0" VerticalAlignment="Top"/>
         <Grid>
-            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="433,22,32,384" Background="#FF15B326">
-                <Label Content="Latest Expenses" Margin="70,0,71,-2" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" Foreground="White"/>
+            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="433,22,32,384" Background="#FFFFDB57">
+                <Label Content="Latest Expenses" Margin="80,7,96,7" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" Foreground="Black"/>
             </Border>
             <DataGrid x:Name="expensesDataGrid" Margin="433,276,32,42" BorderBrush="#FF2572BD"
-              Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" ClipboardCopyMode="IncludeHeader"
+              Foreground="#FF080808" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" ClipboardCopyMode="IncludeHeader"
               AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Note" Binding="{Binding Note}" Width="100"/>
@@ -74,11 +59,11 @@
             </DataGrid>
         </Grid>
         <Grid>
-            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="433,225,32,181" Background="#FF15B326">
-                <Label Content="Latest Incomes" Margin="70,0,71,-2" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" Foreground="White"/>
+            <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="433,225,32,181" Background="#FFFFDB57">
+                <Label Content="Latest Incomes" Margin="90,6,90,10" FontFamily="Montserrat" FontSize="20" FontWeight="Bold" Foreground="Black"/>
             </Border>
             <DataGrid x:Name="incomesDataGrid" Margin="433,74,32,244" BorderBrush="#FF2572BD" 
-              Foreground="#FF0B9220" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" ClipboardCopyMode="IncludeHeader" 
+              Foreground="#FF121111" FontFamily="Montserrat" FontWeight="Bold" BorderThickness="0,0,0,0" SnapsToDevicePixels="True" MinColumnWidth="26" CanUserSortColumns="False" GridLinesVisibility="None" ClipboardCopyMode="IncludeHeader" 
               AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Note" Binding="{Binding Note}" Width="100"/>
@@ -88,8 +73,8 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
-                                    <Button Content="Update" Click="updateIncomeBtn_Click" Background="Blue" Foreground="White"/>
-                                    <Button Content="Delete" Click="deleteIncomeBtn_Click" Background="Red" Foreground="White"/>
+                                    <Button Content="Update" Click="updateIncomeBtn_Click" Background="Blue" Foreground="Black"/>
+                                    <Button Content="Delete" Click="deleteIncomeBtn_Click" Background="Red" Foreground="Black"/>
                                 </Grid>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
