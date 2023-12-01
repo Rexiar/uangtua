@@ -8,9 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assert\6573.jpg" />
+    <None Remove="Assert\8432.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoClosingMessageBox" Version="1.0.0.5" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="Npgsql" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assert\6573.jpg" />
+    <Resource Include="Assert\8432.jpg" />
   </ItemGroup>
 
 </Project>

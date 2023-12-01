@@ -9,21 +9,16 @@
       Title="CategoriesPage">
 
     <Grid>
-        <Border BorderThickness="0" CornerRadius="10" BorderBrush="Black" Background="White">
-<<<<<<< HEAD
-            <DataGrid x:Name="DatagridCategory" HorizontalAlignment="Left" Height="155" Margin="55,254,0,0" VerticalAlignment="Top" Width="669" SelectionChanged="DataGrid_SelectionChanged">
-=======
-        </Border>
+        <Border BorderThickness="0" CornerRadius="10" BorderBrush="Black" Background="White"/>
         <Grid>
             <DataGrid x:Name="categoriesByExpenseDataGrid" HorizontalAlignment="Left" Height="342" Margin="439,83,0,0" VerticalAlignment="Top" Width="163" SelectionChanged="DataGrid_SelectionChanged" FontFamily="Montserrat" FontSize="14" AutoGenerateColumns="False">
->>>>>>> 1e0e8680803280855de5a642b487ff19350bf12f
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Expense" Binding="{Binding Title}" Width="*">
                         <DataGridTextColumn.HeaderStyle>
                             <Style TargetType="DataGridColumnHeader">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />
                                 <Setter Property="Foreground" Value="White" />
-                                <Setter Property="Background" Value="Green" />
+                                <Setter Property="Background" Value="#FF00509D" />
                                 <Setter Property="Height" Value="50" />
                             </Style>
                         </DataGridTextColumn.HeaderStyle>
@@ -37,7 +32,7 @@
                             <Style TargetType="DataGridColumnHeader">
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />
                                 <Setter Property="Foreground" Value="White" />
-                                <Setter Property="Background" Value="Green" />
+                                <Setter Property="Background" Value="#FF00509D" />
                                 <Setter Property="Height" Value="50" />
                             </Style>
                         </DataGridTextColumn.HeaderStyle>
@@ -47,7 +42,7 @@
         </Grid>
         <Grid/>
         <Label Content="Categories" HorizontalAlignment="Left" Margin="24,25,0,0" VerticalAlignment="Top" FontFamily="Montserrat" FontSize="25" FontWeight="Bold" Height="37" Width="180"/>
-        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="53,83,53,215" Background="#FFFFDB57">
+        <Border BorderThickness="0" CornerRadius="8" BorderBrush="Black" Margin="53,83,400,73" Background="#FFFFDB57">
         </Border>
         <Grid>
             <Grid>
@@ -55,13 +50,13 @@
                 <Label Content="Name" HorizontalAlignment="Left" Margin="92,110,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Foreground="#FF565050"/>
             </Grid>
             <Grid>
-                <Label Content="Type" HorizontalAlignment="Left" Margin="400,110,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Foreground="#FF565050" RenderTransformOrigin="0.569,0.77"/>
-                <ComboBox x:Name="typeInput" Margin="400,141,148,270">
+                <Label Content="Type" HorizontalAlignment="Left" Margin="91,180,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="12" Foreground="#FF565050" RenderTransformOrigin="0.569,0.77"/>
+                <ComboBox x:Name="typeInput" Margin="91,206,457,206">
                     <ComboBoxItem Content="Income"/>
                     <ComboBoxItem Content="Expense"/>
                 </ComboBox>
             </Grid>
-            <Button x:Name="addCategoryBtn" Content="Add Category" HorizontalAlignment="Left"  Margin="576,184,0,0" VerticalAlignment="Top" Width="112" Height="30" Padding="5" Foreground="White" Background="#FF00509D" Click="addCategoryBtn_Click" />
+            <Button x:Name="addCategoryBtn" Content="Add Category" HorizontalAlignment="Left"  Margin="157,281,0,0" VerticalAlignment="Top" Width="112" Height="30" Padding="5" Foreground="White" Background="#FF00509D" Click="addCategoryBtn_Click" />
         </Grid>
     </Grid>
 </Page>

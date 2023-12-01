@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MainProgram"
         mc:Ignorable="d"
         Title="loginWindow" Height="500" Width="1000"
-        Background="White">
+        Background="White" ResizeMode="NoResize">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
